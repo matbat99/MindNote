@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2019_05_27_115613) do
   end
 
   create_table "practices", force: :cascade do |t|
-    t.boolean "active"
+    t.boolean "active", default: false
     t.integer "easiness_factor", default: 2
     t.integer "repetition", default: 0
     t.integer "interval", default: 0
