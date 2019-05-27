@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_27_115613) do
+ActiveRecord::Schema.define(version: 2019_05_27_131458) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2019_05_27_115613) do
 
   create_table "practices", force: :cascade do |t|
     t.boolean "active", default: false
-    t.integer "easiness_factor", default: 2
+    t.float "easiness_factor", default: 2.5
     t.integer "repetition", default: 0
     t.integer "interval", default: 0
     t.bigint "user_id"
