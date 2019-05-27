@@ -10,7 +10,7 @@ class PracticesController < ApplicationController
 
   def destroy
   end
-
+  
   def learn
   end
 end
