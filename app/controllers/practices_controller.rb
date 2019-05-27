@@ -16,5 +16,8 @@ class PracticesController < ApplicationController
   end
 
   def learn
+    @practice = Practice.find(params[:id])
+    @practice.update(active: true)
+    redirect_to practices_path
   end
 end
