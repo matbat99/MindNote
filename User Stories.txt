@@ -1,0 +1,26 @@
+﻿As a user I can add a song (practices#create)
+* Import via Itunes API
+
+
+As a user I can choose a new song to learn (practices#learn)
+route
+
+
+
+
+As a user I can practice my next song (sessions#create)
+
+
+
+
+As a user I can rate my practice session (sessions#update)
+
+
+
+
+As a user I can remove a song (practices#delete)
+
+
+
+
+As a user I can view all my songs (practices#index)

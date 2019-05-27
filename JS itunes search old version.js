@@ -1,6 +1,3 @@
-import "bootstrap";
-
-
 const resultList = document.querySelector('#song-search-results')
 
 const searchBox = document.querySelector("#song-search");
@@ -13,10 +10,8 @@ const outputToScreen = (songs) => {
   if (songs) {
     songs.forEach((song) => {
       resultList.insertAdjacentHTML('beforeend',
-        `<form action="/songs" method='post'> <input type="hidden" name="album_url" value='${song['collectionViewUrl']}'>
-        <input type="text" name="title" value='${song['trackName']}'>
-        <input type="text" name="artist" value='${song['artistName']}'>
-        <input type="submit">`
+        `<li> <a href='/practices' data-song="${song.trackName}" data-artist="${song.trackName}" method='POST'>
+         Song: ${song.trackName} Artist: ${song.artistName} </a></li>`
         )
     })
   }
@@ -30,7 +25,6 @@ searchBox.addEventListener('submit', (event) => {
   fetch(baseUrl+searchTerm.value+"&entity=musicTrack&limit=5")
   .then(response => response.json())
   .then((data)=> {
-    console.log(data);
     outputToScreen(data.results);
   });
 });
