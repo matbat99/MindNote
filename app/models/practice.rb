@@ -14,6 +14,17 @@ class Practice < ApplicationRecord
     0 => -0.8
   }.freeze
 
+  def self.urgent_songs(user_id)
+    user = User.find(user_id)
+    practices = user.practices
+    practices.select { |practice| practice.need_to_practice? }
+  end
+
+  def need_to_practice?
+    last_session = self.sessions.where(active: true).order(:created_at).last.created_at
+    last_session += self.interval.days
+    last_session.past?
+  end
 
   def next_interval(grade)
     grade = MAX_GRADE if grade > MAX_GRADE

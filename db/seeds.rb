@@ -19,12 +19,15 @@ u.save!
 puts "Creating artist..."
 a = Artist.new(name: "Relient K")
 a.save!
+queen = Artist.new(name: "Queen")
 
 puts "Creating Songs..."
 s = Song.new(title: "Forget and Not Slow Down", artist: a)
 s.save!
-
+s2 = Song.new(title: "Another One Bites the Dust", artist: queen)
+s2.save!
 puts "Creating Practices..."
 Practice.create!(user: u, song: s)
+Practice.create!(user: u, song: s2)
 
 puts "Seed complete!"
