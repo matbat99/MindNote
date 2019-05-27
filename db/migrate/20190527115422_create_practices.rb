@@ -1,7 +1,7 @@
 class CreatePractices < ActiveRecord::Migration[5.2]
   def change
     create_table :practices do |t|
-      t.boolean :active
+      t.boolean :active, default: false
       t.integer :easiness_factor, default: 2.5
       t.integer :repetition, default: 0
       t.integer :interval, default: 0
