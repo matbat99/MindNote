@@ -1,0 +1,9 @@
+<h1>Your songs</h1>
+
+<% @practices.each do |practice| %>
+  <ul>
+    <li>
+      <%= practice.song.title %>
+    </li>
+  </ul>
+<% end %>

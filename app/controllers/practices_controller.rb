@@ -1,5 +1,6 @@
 class PracticesController < ApplicationController
   def index
+    @practices = current_user.practices
   end
 
   def create
@@ -10,7 +11,7 @@ class PracticesController < ApplicationController
 
   def destroy
   end
-  
+
   def learn
   end
 end
