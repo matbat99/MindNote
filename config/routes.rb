@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :songs, only: [:create]
 
-  resources :practices, only: [:index, :show, :create, :destroy] do
+  resources :practices, only: [:index, :show, :destroy] do
     resources :sessions, only: [:create]
     member do
       get 'learn'
