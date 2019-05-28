@@ -3,9 +3,6 @@
 
 
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-  Add Song
-</button>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -36,6 +33,8 @@
 <a href="#" class="mn-btn mn-btn-primary">Choose Song</a>
 <a href="#" class="mn-btn mn-btn-secondary">Choose Song</a>
 
+<%= render "practice_card" %>
+
 <div class="learn-bar">
   <h1>Learn a New Song</h1>
   <div class="learn-bar-albums">
@@ -46,3 +45,8 @@
   </div>
   <p>Tap to Choose</p>
 </div>
+
+
+<button type="button" class="mn-btn-circle botom-right-corner" data-toggle="modal" data-target="#exampleModalCenter">
+  +
+</button>
