@@ -23,6 +23,7 @@ class PracticesController < ApplicationController
 
   def find_song
     @practice = Practice.find(params[:id])
+
   end
 
   # def song_search
