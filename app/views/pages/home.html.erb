@@ -8,21 +8,20 @@
 </button>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade search-modal" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-body">
-         <% @song=Song.new %>
+        <form id="song-search">
+          <input type="text" class="query" placeholder="Search for a Song">
+        </form>
          <%= form_for(@song) do |f| %>
-           <%= f.submit "add a song"%>
          <% end %>
-
-         <form id="song-search">
-           <input type="text" class="query">
-         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <input type="submit" form="new_song" value="Create Song" class="mn-btn mn-btn-primary">
+        <!-- <a href="#" class="mn-btn mn-btn-primary" data-dismiss="modal">Create Song</a> -->
+        <a href="#" class="mn-btn mn-btn-secondary" data-dismiss="modal">Close</a>
       </div>
     </div>
   </div>
