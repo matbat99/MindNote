@@ -1,0 +1,27 @@
+.mn-btn {
+  color: white;
+  padding: 11px 49px;
+  font-size: 22px;
+  border-radius: 26px;
+  transition: background-color .2s ease;
+}
+
+.mn-btn-primary {
+  background-color: $orange;
+
+  &:hover {
+    background-color: #f9966d;
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.mn-btn-secondary {
+  background-color: $pink;
+
+  &:hover {
+    background-color: #f79292;
+    text-decoration: none;
+    color: white;
+  }
+}
