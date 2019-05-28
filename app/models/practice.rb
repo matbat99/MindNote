@@ -17,11 +17,23 @@ class Practice < ApplicationRecord
   def self.urgent_songs(user_id)
     user = User.find(user_id)
     practices = user.practices
-    practices.select { |practice| practice.need_to_practice? }
+    practices.select { |practice| practice.active? }
+    practices.select { |practice| practice.need_to_practice?}
+    practices.each { |practice| practice.update_importance }
+    practices.sort_by { |practice| practice.importance }
+    practices.reverse
+  end
+
+  def update_importance
+    today = DateTime.now.to_i
+    last_session = self.sessions.order(:created_at).last.created_at
+    last_session += self.interval.days
+    importance = (today - last_session.to_i)
+    self.update(importance: importance)
   end
 
   def need_to_practice?
-    last_session = self.sessions.where(active: true).order(:created_at).last.created_at
+    last_session = self.sessions.order(:created_at).last.created_at
     last_session += self.interval.days
     last_session.past?
   end
