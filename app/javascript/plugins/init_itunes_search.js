@@ -1,6 +1,6 @@
 const outputToScreen = (songs) => {
-  const resultList = document.querySelector('.new_song')
-  resultList.innerHTML = '<input type="submit" name="commit" value="add a song" data-disable-with="add a song">'
+  const resultList = document.querySelector('.song-options')
+  resultList.innerHTML = ''
   if (songs) {
     songs.forEach((song) => {
       resultList.insertAdjacentHTML('afterbegin',
