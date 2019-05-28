@@ -1,0 +1,50 @@
+.practice-card{
+    height: 173px;
+    width: 100%;
+    background-color: white;
+    padding: 17px 38px;
+    border-radius: 6px;
+    padding-bottom: 0px;
+  h1{
+    text-align: left;
+    font-size: 21px;
+    }
+  h3{
+    font-size: 18px;
+  }
+}
+
+.info{
+  display: flex;
+  height: 70%;
+  h1{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    height: 1.2em;
+    text-align: center;
+    font-size: 34px;
+  }
+  h2{
+    height: 100%;
+    width: 27%;
+    border: 1px solid black;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 15px;
+  }
+}
+
+.details{
+  height: 100%;
+  text-align: center;
+  flex-grow: 3;
+  padding: 8px 0px;
+  width: 73%;
+  p{
+    text-align: right;
+    margin-bottom: 0px;
+  }
+}

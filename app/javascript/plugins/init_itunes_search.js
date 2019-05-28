@@ -1,6 +1,8 @@
 const outputToScreen = (songs) => {
+
   const resultList = document.querySelector('.new_song')
   // resultList.innerHTML = '<input type="submit" name="commit" value="add a song" data-disable-with="add a song">'
+
   resultList.innerHTML = ''
   if (songs) {
     let incrementor = 1;
