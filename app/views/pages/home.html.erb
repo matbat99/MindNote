@@ -1,6 +1,5 @@
 
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h1>Mind Note</h1>
 
 
 <!-- Button trigger modal -->
@@ -13,7 +12,14 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-body">
-        ...
+         <% @song=Song.new %>
+         <%= form_for(@song) do |f| %>
+           <%= f.submit "add a song"%>
+         <% end %>
+
+         <form id="song-search">
+           <input type="text" class="query">
+         </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -23,14 +29,18 @@
 </div>
 
 
-<h1>MindNote</h1>
-<p>You suck at practicing!</p>
 
-<form id="song-search">
-  <input type="text" class="query">
-</form>
 
-<ul id="song-search-results">
+<a href="#" class="mn-btn mn-btn-primary">Choose Song</a>
+<a href="#" class="mn-btn mn-btn-secondary">Choose Song</a>
 
-</ul>
-
+<div class="learn-bar">
+  <h1>Learn a New Song</h1>
+  <div class="learn-bar-albums">
+    <%= image_tag asset_path('logo') %>
+    <%= image_tag asset_path('logo') %>
+    <%= image_tag asset_path('logo') %>
+    <%= image_tag asset_path('logo') %>
+  </div>
+  <p>Tap to Choose</p>
+</div>
