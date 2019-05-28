@@ -1,6 +1,6 @@
 const outputToScreen = (songs) => {
 
-  const resultList = document.querySelector('.new_song')
+  const resultList = document.querySelector('.song-holder')
   // resultList.innerHTML = '<input type="submit" name="commit" value="add a song" data-disable-with="add a song">'
 
   resultList.innerHTML = ''
