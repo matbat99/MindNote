@@ -6,7 +6,6 @@ class PracticesController < ApplicationController
   end
 
   def show
-    @session = Session.new
   end
 
   def destroy

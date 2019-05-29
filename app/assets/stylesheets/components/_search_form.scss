@@ -25,7 +25,7 @@
   height: 500px;
 }
 
-input[type=radio]:checked + label {
+.song-holder input[type=radio]:checked + label {
   background-color: $orange;
 }
 
