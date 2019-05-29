@@ -13,11 +13,6 @@ class PracticesController < ApplicationController
     redirect_to practices_path
   end
 
-  def learn
-    @practice.update(active: true)
-    redirect_to practices_path
-  end
-
   def review
     @practices = Practice.urgent_songs(current_user.id)
   end
