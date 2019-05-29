@@ -51,7 +51,10 @@
   </div>
 </div>
 
-<%= render "practice_card" %>
+
+
+<%= render "practice_card", practices: Practice.urgent_songs(current_user.id)  %>
+
 
 <a href="#" data-toggle="modal", data-target='#ModalScrollable' >
   <div class="learn-bar">
