@@ -1,16 +1,16 @@
 .practice-card{
   position: relative;
-  height: 173px;
-  width: 100%;
   background-color: white;
-  padding: 17px 38px;
-  border-radius: 6px;
-  padding-bottom: 0px;
-  h1{
+  padding: 15px 25px;
+  border-radius: 3px;
+
+  p {
     text-align: left;
     font-size: 21px;
-    }
-  h3{
+    margin: 0;
+  }
+
+  h3 {
     font-size: 18px;
   }
 }
@@ -18,34 +18,34 @@
 
 .info{
   display: flex;
-  height: 70%;
-  h1{
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    height: 1.2em;
-    text-align: center;
-    font-size: 34px;
-  }
+  margin-top: 10px;
   img{
-    height: 110px;
-    width: 110px;
-    border: 1px solid black;
-    border-radius: 15px;
-    margin-right: 10px;
-    margin-left: 13px;
+    height: 130px;
+    width: 130px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, .31);
   }
 }
 
 .details{
-  height: 100%;
-  text-align: center;
   flex-grow: 3;
-  padding: 8px 0px;
-  width: 73%;
-  p{
+  text-align: center;
+
+  h1{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 34px;
+    margin-top: 15px;
+  }
+
+  h3 {
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 15px;
+    margin: 0;
     text-align: right;
-    margin-bottom: 0px;
   }
 }
 
@@ -53,16 +53,10 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+
   h1{
     font-size: 37px;
     text-align: center;
     margin-bottom: 0;
   }
-}
-.practice-link {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
 }
