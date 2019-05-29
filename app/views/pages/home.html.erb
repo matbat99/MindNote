@@ -1,6 +1,46 @@
 
-<h1>Mind Note</h1>
+<%= render 'shared/navbar' %>
+<%#= image_tag asset_path("mind-note-colored") %>
+<%= render "practice_card", practices: Practice.urgent_songs(current_user.id)  %>
 
+
+<a href="#" data-toggle="modal", data-target='#ModalScrollable' >
+
+<% if current_user.songs.empty? %>
+
+  <div class="practice-card sad">
+      <h1>Tap the + button to add a song!</h1>
+  </div>
+
+<% else %>
+
+ <div class="learn-bar">
+  <h1>Learn a New Song</h1>
+  <div class="learn-bar-albums">
+    <% @unlearned.each_with_index do |practice, id| %>
+      <% unless practice.song.album_url.nil? %>
+        <%= image_tag image_url(practice.song.album_url) %>
+      <% end %>
+      <% break if id == 3 %>
+    <% end %>
+  </div>
+  <p>Tap to Choose</p>
+</div>
+
+<div class="review-card">
+  <h1><%= @songs_due %></h1>
+  <div class="details">
+    <h1>Songs left to review</h1>
+    <p> <%= link_to "view", review_practices_path %></p>
+  </div>
+</div>
+<% end %>
+
+
+
+<button type="button" class="mn-btn-circle botom-right-corner" data-toggle="modal" data-target="#ModalCenter">
+  +
+</button>
 
 <!-- Modal for create song -->
 <div class="modal fade" id="ModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -50,46 +90,3 @@
     </div>
   </div>
 </div>
-
-
-
-<%= render "practice_card", practices: Practice.urgent_songs(current_user.id)  %>
-
-
-<a href="#" data-toggle="modal", data-target='#ModalScrollable' >
-
-<% if current_user.songs.empty? %>
-
-  <div class="practice-card sad">
-      <h1>Tap the + button to add a song!</h1>
-  </div>
-
-<% else %>
-
- <div class="learn-bar">
-  <h1>Learn a New Song</h1>
-  <div class="learn-bar-albums">
-    <% @unlearned.each_with_index do |practice, id| %>
-      <% unless practice.song.album_url.nil? %>
-        <%= image_tag image_url(practice.song.album_url) %>
-      <% end %>
-      <% break if id == 3 %>
-    <% end %>
-  </div>
-  <p>Tap to Choose</p>
-</div>
-
-<div class="review-card">
-  <h1><%= @songs_due %></h1>
-  <div class="details">
-    <h1>Songs left to review</h1>
-    <p> <%= link_to "view", review_practices_path %></p>
-  </div>
-</div>
-<% end %>
-
-
-
-<button type="button" class="mn-btn-circle botom-right-corner" data-toggle="modal" data-target="#ModalCenter">
-  +
-</button>
