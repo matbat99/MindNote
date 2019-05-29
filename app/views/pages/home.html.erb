@@ -2,9 +2,7 @@
 <h1>Mind Note</h1>
 
 
-<!-- Button trigger modal -->
-
-<!-- Modal -->
+<!-- Modal for create song -->
 <div class="modal fade search-modal" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -14,7 +12,6 @@
         </form>
          <%= form_for(@song) do |f| %>
           <div class="song-holder">
-
           </div>
          <% end %>
       </div>
@@ -27,9 +24,33 @@
   </div>
 </div>
 
+<!-- Modal for learn song -->
+<div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+  <div class="modal-dialog-centered modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalScrollableTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <a href="#" class="mn-btn mn-btn-secondary" data-dismiss="modal">Close</a>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 <%= render "practice_card" %>
 
-<div class="learn-bar">
+<a href="#" data-toggle="modal", data-target='#exampleModalScrollable' >
+  <div class="learn-bar">
   <h1>Learn a New Song</h1>
   <div class="learn-bar-albums">
     <% @unlearned.each do |practice| %>
@@ -38,8 +59,7 @@
       <% end %>
     <% end %>
   </div>
-  <p>Tap to Choose</p>
-</div>
+</a>
 
 
 <div class="review-card">

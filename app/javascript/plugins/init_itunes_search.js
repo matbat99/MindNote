@@ -30,7 +30,7 @@ const outputToScreen = (songs) => {
 const searchItunes =()=> {
   const searchTerm= event.currentTarget.querySelector('.query');
   const baseUrl = "https://itunes.apple.com/search?term="
-  fetch(baseUrl+searchTerm.value+"&entity=musicTrack&limit=4")
+  fetch(baseUrl+searchTerm.value+"&entity=song&limit=4")
   .then(response => response.json())
   .then((data)=> {
     console.log(data);

@@ -1,0 +1,13 @@
+<h1><%= @practice.song.title %></h1>
+<p>Next interval: <%= @practice.interval %> days</p>
+<%= form_for [@practice, @session] do |f| %>
+  <%= radio_button(:grade, "grade", 1) %>
+  <%= label_tag(:grade, "Bad") %>
+  <%= radio_button(:grade, "grade", 3) %>
+  <%= label_tag(:grade, "Hard") %>
+  <%= radio_button(:grade, "grade", 4) %>
+  <%= label_tag(:grade, "Good") %>
+  <%= radio_button(:grade, "grade", 5) %>
+  <%= label_tag(:grade, "Great") %>
+  <%= f.submit "Grade" %>
+<% end %>
