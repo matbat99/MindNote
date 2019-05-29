@@ -14,4 +14,8 @@
 
 body a {
   text-decoration: none !important;
+  color : #CECECE;
+  &:hover{
+    color: #CECECE;
+  }
 }
