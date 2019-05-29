@@ -59,13 +59,10 @@
 <a href="#" data-toggle="modal", data-target='#ModalScrollable' >
 
 <% if current_user.songs.empty? %>
-
   <div class="practice-card sad">
       <h1>Tap the + button to add a song!</h1>
   </div>
-
 <% else %>
-
    <div class="learn-bar">
     <h1>Learn a New Song</h1>
     <div class="learn-bar-albums">
@@ -76,18 +73,14 @@
         <% break if id == 3 %>
       <% end %>
     </div>
-
-
-
-
-<div class="review-card">
-  <h1><%= @songs_due %></h1>
-  <div class="details">
-    <h1>Songs left to review</h1>
-    <p> <%= link_to "view", review_practices_path %></p>
-
+    <div class="review-card">
+      <h1><%= @songs_due %></h1>
+      <div class="details">
+        <h1>Songs left to review</h1>
+        <p> <%= link_to "view", review_practices_path %></p>
+      </div>
+    </div>
   </div>
-
 <% end %>
 
 
@@ -95,3 +88,10 @@
 <button type="button" class="mn-btn-circle botom-right-corner" data-toggle="modal" data-target="#ModalCenter">
   +
 </button>
+
+
+
+<h1 class="mn-btn linear-bg center relative">Progress
+  <%= link_to "", progress_practices_path, class: "link" %>
+</h1>
+

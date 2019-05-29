@@ -17,6 +17,14 @@ class PracticesController < ApplicationController
     @practices = Practice.urgent_songs(current_user.id)
   end
 
+  def progress
+    @practices = current_user.practices
+  end
+
+  def statistics
+    @practice = Practice.find(params[:id])
+  end
+
   private
 
   def find_song
