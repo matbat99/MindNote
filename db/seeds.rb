@@ -7,7 +7,7 @@ Artist.destroy_all
 User.destroy_all
 
 puts "Creating user..."
-u = User.new(email: "user@email.com", password: "password")
+u = User.new(email: "user@email.com", name: "user", password: "password")
 u.save!
 
 puts "Creating artist..."
