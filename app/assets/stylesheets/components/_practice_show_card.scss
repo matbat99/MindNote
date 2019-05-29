@@ -1,0 +1,28 @@
+.song-card{
+  background: linear-gradient(208.57deg, rgba(253, 130, 129, 0.3 ) 14.54% , rgba(100, 52, 32, 0.5) 90.24%), url("https://picsum.photos/200/300");
+  background-size: cover;
+  background-position: center;
+  height: 530px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 59px;
+  margin-bottom: 77px;
+  border-radius: 10px;
+  .song-card-info{
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    h1{
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      font-size: 62px;
+    }
+    h3{
+      font-size: 51px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  }
+}
