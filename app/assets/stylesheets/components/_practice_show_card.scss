@@ -12,11 +12,15 @@
   .song-card-info{
     color: white;
     text-shadow: 1px 1px 2px black;
+    width: 100%;
     h1{
-      overflow: hidden;
-      white-space: nowrap;
       text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
       font-size: 62px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 50px;
     }
     h3{
       font-size: 51px;
