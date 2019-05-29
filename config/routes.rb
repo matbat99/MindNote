@@ -5,9 +5,9 @@ Rails.application.routes.draw do
   resources :songs, only: [:create]
 
   resources :practices, only: [:index, :show, :destroy] do
-    resources :sessions, only: [:create]
-    member do
-      get 'learn'
+    collection do
+      get "review"
     end
+    resources :sessions, only: [:create]
   end
 end
