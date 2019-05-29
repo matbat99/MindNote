@@ -21,7 +21,13 @@
   }
 }
 
-input[type=radio]:checked + label {
+
+#new_song {
+  height: 500px;
+}
+
+.song-holder input[type=radio]:checked + label {
+
   background-color: $orange;
 }
 

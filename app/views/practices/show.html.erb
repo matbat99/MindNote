@@ -4,16 +4,11 @@
 <% end %>
 
 
-<div class="song-card">
+<div class="song-card" style="background-image: linear-gradient(208.57deg, rgba(0, 0, 0, 0.5 ), rgba(0, 0, 0, 0.8)), url('<%= @practice.song.album_url %>')">
   <div class="song-card-info">
-    <h1>Blue Madonna</h1>
-    <h3>Borns</h3>
+    <h3><%= @practice.song.title %></h3>
+    <p><%= @practice.song.artist.name %></p>
   </div>
 </div>
 
-<%= link_to practices_path do %>
-    <p class="mn-btn-primary mn-btn big-btn center">Finish Rehersal</p>
-  <% end %>
-
-
-
+<%= link_to "Rate Rehearsal", new_practice_session_path(@practice), class: "mn-btn-primary mn-btn-lrg"%>

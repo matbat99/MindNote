@@ -1,0 +1,41 @@
+.star-row {
+  text-align: center;
+  height: 46px;
+  padding: 0 10px;
+}
+.star-row:not(:checked) > input[type=radio] {
+  display: none;
+}
+.star-row:not(:checked) > label {
+  overflow:hidden;
+  white-space:nowrap;
+  cursor:pointer;
+  font-size:30px;
+  color:#9e9e9e;
+}
+.star-row:not(:checked) > label:before {
+  font-size: 70px;
+  content: '★';
+}
+.star-row > input:checked ~ label {
+  color: #ffc700;
+}
+.star-row:not(:checked) > label:hover,
+.star-row:not(:checked) > label:hover ~ label {
+  color: #deb217;
+}
+.star-row > input:checked + label:hover,
+.star-row > input:checked + label:hover ~ label,
+.star-row > input:checked ~ label:hover,
+.star-row > input:checked ~ label:hover ~ label,
+.star-row > label:hover ~ input:checked ~ label {
+  color: #c59b08;
+}
+
+.star-row {
+  padding: 0 50px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-around;
+}

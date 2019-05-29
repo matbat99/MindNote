@@ -9,4 +9,9 @@ class SessionsController < ApplicationController
       render practice # don't know if this works
     end
   end
+
+  def new
+    @practice = Practice.find(params[:practice_id])
+    @session = Session.new
+  end
 end
