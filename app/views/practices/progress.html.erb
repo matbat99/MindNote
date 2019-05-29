@@ -1,7 +1,8 @@
 <div class="review-songs">
-  <h1>Songs due for Review</h1>
+  <h1>Youre rehearsed songs</h1>
   <% @practices.each do |practice| %>
     <div class="song-item">
+      <%= link_to "", statistics_practice_path(practice.id), class: "link" %>
       <%= image_tag practice.song.album_url, alt: practice.song.title %>
       <div class="song-item-info">
         <h2><%= practice.song.title %></h2>
@@ -10,7 +11,5 @@
     </div>
   <% end %>
 </div>
-<%= link_to root_path do %>
-<p class="mn-btn-circle"><i class="fas fa-arrow-left"></i></p>
-<% end %>
 
+<%= link_to "BACK", root_path %>

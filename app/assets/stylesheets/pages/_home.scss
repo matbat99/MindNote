@@ -19,3 +19,15 @@ body a {
     color: $gray !important;
   }
 }
+ul.hmenu {
+  list-style: none;
+  margin: 0 0 2em;
+  padding: 0;
+  color: black;
+  background-color: white;
+  width: 65px;
+}
+
+ul.hmenu li {
+  display: inline;
+}

@@ -1,0 +1,21 @@
+<div class="practice-card">
+  <h1>Number of times rehearsed: <%= @practice.sessions.count %></h1>
+  <% averages = [] %>
+   <% @practice.sessions.each do |session| %>
+     <% averages << session.grade %>
+   <% end %>
+   <% if averages.length == 0 %>
+    <h1>You haven't reheares this song!</h1>
+   <% else %>
+     <% average = averages.sum / averages.length %>
+    <h1> Your average rating <%= average  %></h1>
+  <% end %>
+  <% if @practice.sessions.count == 0 %>
+    <h1 class="mn-btn linear-bg center relative">Start rehearsal
+      <%= link_to "", practice_path(@practice.id), class: "link" %>
+    </h1>
+  <% else %>
+
+    <h1>You started rehearsing this song at <%= @practice.sessions.first.created_at %></h1>
+  <% end %>
+</div>
