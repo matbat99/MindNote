@@ -5,7 +5,7 @@
   padding: 34px;
   width: 640px;
   height: 100vh;
-  background-color: #CECECE;
+  background-color: $light-gray;
   margin: 0 auto;
   text-align: center;
   height: 100vh;
@@ -14,8 +14,8 @@
 
 body a {
   text-decoration: none !important;
-  color : #CECECE;
+  color : $gray;
   &:hover{
-    color: #CECECE;
+    color: $gray !important;
   }
 }
