@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def home
     @song = Song.new
-    @unlearned = Practice.where(active: false)
+    @unlearned = current_user.practices.where(active: false)
   end
 end
