@@ -10,9 +10,11 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
-
     <%= render 'shared/flashes' %>
     <div class="mobile-container">
+      <ul class="hmenu">
+        <%= render 'devise/menu/login_items' %>
+      </ul>
       <%= yield %>
 
 
