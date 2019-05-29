@@ -7,7 +7,6 @@ class SessionsController < ApplicationController
     practice.active = practice.sessions.present?
     practice.save
     if session.save
-      raise
       redirect_to :root
     else
       render practice # don't know if this works
