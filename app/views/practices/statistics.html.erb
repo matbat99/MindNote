@@ -8,7 +8,7 @@
     <h1>You haven't reheares this song!</h1>
    <% else %>
      <% average = averages.sum / averages.length %>
-    <h1> Your average rating <%= average  %></h1>
+    <h1> Your average rating: <%= average  %></h1>
   <% end %>
   <% if @practice.sessions.count == 0 %>
     <h1 class="mn-btn linear-bg center relative">Start rehearsal
@@ -16,6 +16,6 @@
     </h1>
   <% else %>
 
-    <h1>You started rehearsing this song at <%= @practice.sessions.first.created_at %></h1>
+    <h1>You started rehearsing this song on <%= @practice.sessions.first.created_at.strftime("%A, %b %d") %></h1>
   <% end %>
 </div>
