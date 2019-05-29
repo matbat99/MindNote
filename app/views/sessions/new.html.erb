@@ -7,20 +7,17 @@
 
 <%= form_for([@practice, @session]) do |f| %>
   <div class="star-row">
-    <%= radio_button_tag(:star, "1") %>
-    <%= label_tag(:star_1, "") %>
-    <%= radio_button_tag(:star, "2") %>
-    <%= label_tag(:star_2, "") %>
-    <%= radio_button_tag(:star, "3") %>
-    <%= label_tag(:star_3, "") %>
-    <%= radio_button_tag(:star, "4") %>
-    <%= label_tag(:star_4, "") %>
     <%= radio_button_tag(:star, "5") %>
     <%= label_tag(:star_5, "") %>
+    <%= radio_button_tag(:star, "4") %>
+    <%= label_tag(:star_4, "") %>
+    <%= radio_button_tag(:star, "3") %>
+    <%= label_tag(:star_3, "") %>
+    <%= radio_button_tag(:star, "2") %>
+    <%= label_tag(:star_2, "") %>
+    <%= radio_button_tag(:star, "1") %>
+    <%= label_tag(:star_1, "") %>
   </div>
   <br>
   <%= f.submit "Finish Rehearsal", class: "mn-btn mn-btn-primary" %>
 <% end %>
-<!-- <input type="submit" form="myform" value="Finish Rehearsal"/> -->
-<!-- <%= link_to "Finish Rehearsal", new_practice_session_path(@practice), class: "mn-btn-primary mn-btn-lrg"%>
-<%=  %> -->
