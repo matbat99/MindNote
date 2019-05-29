@@ -31,20 +31,20 @@
   align-items: center;
 }
 
-.big-btn{
-  width: 80%;
-  margin-bottom: 0;
-}
-
-.center{
-  text-align: center;
-  margin: 0 auto;
+.mn-btn-lrg {
+  color: white;
+  width: 250px;
+  padding: 18px 75px;
+  font-size: 33px;
+  border-radius: 42px;
+  transition: background-color .2s ease;
+  border: none;
 }
 
 .botom-right-corner{
-  position: fixed;
-  top: 971.1px;
-  left: 469.6px;
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
 }
 
 .mn-btn-secondary {
