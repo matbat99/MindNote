@@ -3,7 +3,7 @@
 
 
 <!-- Modal for create song -->
-<div class="modal fade search-modal" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="ModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-body">
@@ -11,7 +11,7 @@
           <input type="text" class="query" placeholder="Search for a Song">
         </form>
          <%= form_for(@song) do |f| %>
-          <div class="song-holder">
+          <div class="song-list">
           </div>
          <% end %>
       </div>
@@ -25,21 +25,27 @@
 </div>
 
 <!-- Modal for learn song -->
-<div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-  <div class="modal-dialog-centered modal-dialog-scrollable" role="document">
+<div class="modal fade" id="ModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalScrollableTitle">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
       <div class="modal-body">
-        ...
+        <div class="song-list">
+            <% @unlearned.each do |practice| %>
+              <div class="song-item">
+                <img src="<%= practice.song.album_url %>" alt="<%= practice.song.title %>">
+                <div class="song-item-info">
+                  <input type="hidden" name="practice_id" value='<%= practice.id %>'>
+                  <input type="radio" style="display: none" name="radios" id="choice">
+                  <h2><%= practice.song.title %></h2>
+                  <p><%= practice.song.artist.name %></p>
+                </div>
+                <%= link_to "", practice, class: "song-item-link" %>
+              </div>
+            <% end %>
+        </div>
       </div>
       <div class="modal-footer">
         <a href="#" class="mn-btn mn-btn-secondary" data-dismiss="modal">Close</a>
-        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
@@ -47,30 +53,45 @@
 
 
 
-<%= render "practice_card" %>
+<%= render "practice_card", practices: Practice.urgent_songs(current_user.id)  %>
 
-<a href="#" data-toggle="modal", data-target='#exampleModalScrollable' >
-  <div class="learn-bar">
-  <h1>Learn a New Song</h1>
-  <div class="learn-bar-albums">
-    <% @unlearned.each do |practice| %>
-      <% unless practice.song.album_url.nil? %>
-        <%= image_tag image_url(practice.song.album_url) %>
-      <% end %>
-    <% end %>
+
+<a href="#" data-toggle="modal", data-target='#ModalScrollable' >
+
+<% if current_user.songs.empty? %>
+
+  <div class="practice-card sad">
+      <h1>Tap the + button to add a song!</h1>
   </div>
-</a>
+
+<% else %>
+
+   <div class="learn-bar">
+    <h1>Learn a New Song</h1>
+    <div class="learn-bar-albums">
+      <% @unlearned.each_with_index do |practice, id| %>
+        <% unless practice.song.album_url.nil? %>
+          <%= image_tag image_url(practice.song.album_url) %>
+        <% end %>
+        <% break if id == 3 %>
+      <% end %>
+    </div>
+
+
 
 
 <div class="review-card">
-  <h1>4</h1>
+  <h1><%= @songs_due %></h1>
   <div class="details">
     <h1>Songs left to review</h1>
-    <p>view</p>
+    <p> <%= link_to "view", review_practices_path %></p>
+
   </div>
-</div>
+
+<% end %>
 
 
-<button type="button" class="mn-btn-circle botom-right-corner" data-toggle="modal" data-target="#exampleModalCenter">
+
+<button type="button" class="mn-btn-circle botom-right-corner" data-toggle="modal" data-target="#ModalCenter">
   +
 </button>

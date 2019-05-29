@@ -2,7 +2,9 @@ class SongsController < ApplicationController
 
   def create
     artist = Artist.find_or_create_by(name: params[:artist])
-    song = Song.create(title: params[:title], artist: artist, album_url: params[:album_url])
+    album = params[:album_url]
+    album.gsub!(/source\/*.*.jpg/, "source/600x600bb.jpg")
+    song = Song.create(title: params[:title], artist: artist, album_url: album)
     practice = Practice.create!(user: current_user, song: song)
     redirect_to '/'
   end

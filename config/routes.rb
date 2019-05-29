@@ -6,8 +6,9 @@ Rails.application.routes.draw do
 
   resources :practices, only: [:index, :show, :destroy] do
     resources :sessions, only: [:new, :create]
-    member do
-      get 'learn'
+    collection do
+      get "review"
     end
+    resources :sessions, only: [:create]
   end
 end

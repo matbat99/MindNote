@@ -11,10 +11,16 @@
   .song-card-info{
     color: white;
     text-shadow: 1px 1px 2px black;
+
     h3{
       overflow: hidden;
       text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
       font-size: 62px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 50px;
     }
     p {
       font-size: 45px;
