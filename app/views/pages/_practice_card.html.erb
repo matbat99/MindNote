@@ -6,10 +6,10 @@
   <div class="practice-card">
     <h1>Up next to practice:</h1>
     <div class="info">
-      <h2></h2>
+      <h2><%= image_tag practices.first.song.album_url %></h2>
       <div class="details">
-        <h1><%= practices.first.song %></h1>
-        <h3> <%= practices.first.song.artis %> </h3>
+        <h1><%= practices.first.song.title %></h1>
+        <h3> <%= practices.first.song.artist.name %> </h3>
         <p>Tap to practice</p>
       </div>
     </div>
