@@ -17,9 +17,9 @@ class Practice < ApplicationRecord
   def self.urgent_songs(user_id)
     user = User.find(user_id)
     practices = user.practices
-    practices.select { |practice| practice.active? }
-    practices.select { |practice| practice.need_to_practice?}
-    practices.each { |practice| practice.update_importance }
+    practices = practices.select { |practice| practice.active? }
+    practices = practices.select { |practice| practice.need_to_practice?}
+    practices = practices.each { |practice| practice.update_importance }
     practices.sort_by { |practice| practice.importance }
     practices.reverse
   end
