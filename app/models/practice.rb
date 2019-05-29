@@ -17,6 +17,7 @@ class Practice < ApplicationRecord
   def self.urgent_songs(user_id)
     user = User.find(user_id)
     practices = user.practices
+
     return practices = [] if practices.empty?
 
     practices = practices.select { |practice| practice.active? }
