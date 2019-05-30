@@ -1,15 +1,14 @@
 .review-card{
-  height: 173px;
+  height: 125px;
   width: 100%;
   background-color: white;
-  padding: 7px 34px;
+  padding: 7px 10px;
   border-radius: 6px;
   display: flex;
-  margin-top: 20px;
+  margin-top: 15px;
   h1{
     width: 27%;
-    font-size: 20px;
-    font-size: 88px;
+    font-size: $header-font-size-1;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -25,9 +24,8 @@
   display: flex;
   align-items: center;
   margin-bottom: 0;
-  width: 100%;
   justify-content: center;
-  font-size: 35px;
+  font-size: $header-font-size-1;
 }
 
 
@@ -36,7 +34,7 @@
   display: flex;
   align-items: center;
   h1{
-    font-size: 31px;
+    font-size: $header-font-size-1;
     width: 100%;
   }
   p{
