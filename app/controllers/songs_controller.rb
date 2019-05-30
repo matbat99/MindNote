@@ -1,7 +1,9 @@
 class SongsController < ApplicationController
   def create
+
     song_data = JSON.parse(params[:radios])
     if song_data["artistName"].nil?
+
     #test if anything came in params -- in case user backs out without selection
       redirect_to root_path
     else

@@ -1,14 +1,25 @@
-<h1>Your songs</h1>
+<%= render 'shared/navbar' %>
 
-<% @practices.each do |practice| %>
-  <ul>
-    <li>
-      <%= practice.song.title %>
+<div class="review-songs">
+  <h1>Your songs</h1>
+  <% @practices.each do |practice| %>
+    <div class="song-item">
+      <%= image_tag practice.song.album_url, alt: practice.song.title %>
+      <div class="song-item-info">
+        <h2><%= practice.song.title %></h2>
+        <p><%= practice.song.artist.name %></p>
+      </div>
+      <div class="trash">
+        <div class="relative">
+      <%= link_to "", practice_path(practice), method: :delete, class: "link" %>
+        <i class="fas fa-trash-alt"></i>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
 
-    </li>
-  </ul>
-<% end %>
-
+<%= link_to "BACK", root_path %>
 
 
 

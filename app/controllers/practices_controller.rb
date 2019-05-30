@@ -9,6 +9,9 @@ class PracticesController < ApplicationController
   end
 
   def destroy
+    @practice = Practice.find(params[:id])
+    @sessions = @practice.sessions
+    @sessions.each { |sesison| session.destroy }
     @practice.destroy
     flash.notice = "Song removed"
     redirect_to practices_path
