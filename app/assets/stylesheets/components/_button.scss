@@ -18,11 +18,11 @@
 }
 
 .mn-btn-circle{
-  height: 45px;
-  width: 45px;
+  height: 55px;
+  width: 55px;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
   border-radius: 50%;
-  font-size: 61px;
+  font-size: 39px;
   color: white;
   background-color: $primary;
   display: flex;
@@ -33,7 +33,7 @@
   margin: 0;
 
   i{
-    font-size: $header-font-size-1;
+    font-size: $body-font-size-1;
   }
 
   &:hover {
