@@ -12,26 +12,33 @@
 
 <% else %>
 
- <div class="learn-bar">
-  <h1>Learn a New Song</h1>
-  <div class="learn-bar-albums">
-    <% @unlearned.each_with_index do |practice, id| %>
-      <% unless practice.song.album_url.nil? %>
-        <%= image_tag image_url(practice.song.album_url) %>
+  <div class="learn-bar">
+    <h1>Learn a New Song</h1>
+    <div class="learn-bar-albums">
+      <% @unlearned.each_with_index do |practice, id| %>
+        <% unless practice.song.album_url.nil? %>
+          <%= image_tag image_url(practice.song.album_url) %>
+        <% end %>
+        <% break if id == 3 %>
       <% end %>
-      <% break if id == 3 %>
-    <% end %>
+    </div>
+    <p>Tap to Choose</p>
   </div>
-  <p>Tap to Choose</p>
-</div>
 
-<div class="review-card">
-  <h1><%= @songs_due %></h1>
-  <div class="details">
-    <h1>Songs left to review</h1>
+  <% if @songs_due == 0 %>
+  <div class="review-card">
+    <h6 class="cero-review">No more songs left to review today. Good job!</h6>
   </div>
-    <p> <%= link_to "view", review_practices_path %></p>
-</div>
+
+  <% else %>
+    <div class="review-card">
+      <h1><%= @songs_due %></h1>
+      <div class="details">
+        <h1>Songs left to review</h1>
+      </div>
+        <p> <%= link_to "view", review_practices_path %></p>
+    </div>
+  <% end %>
 <% end %>
 
 
