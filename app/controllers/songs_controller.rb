@@ -10,6 +10,7 @@ class SongsController < ApplicationController
       song = Song.create(title: params[:title], artist: artist, album_url: album)
       practice = Practice.new(user: current_user, song: song)
       if practice.save
+        flash.notice = "You added #{practice.song.title}"
         redirect_to practice_path(practice)
       else
         render "home"

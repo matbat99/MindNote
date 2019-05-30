@@ -10,6 +10,7 @@ class PracticesController < ApplicationController
 
   def destroy
     @practice.destroy
+    flash.notice = "Song removed"
     redirect_to practices_path
   end
 
