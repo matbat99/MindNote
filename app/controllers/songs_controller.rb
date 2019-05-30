@@ -10,7 +10,7 @@ class SongsController < ApplicationController
       song = Song.find_or_create_by(title: song_data["trackName"], artist: artist, album_url: album)
       practice = Practice.new(user: current_user, song: song)
       if practice.save
-        flash.notice = "You added #{practice.song.title}"
+        flash.notice = "You added #{practice.song.title} to your list"
         redirect_to :root
       else
         render "home"
