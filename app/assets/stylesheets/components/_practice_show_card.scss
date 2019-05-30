@@ -1,11 +1,11 @@
 .song-card{
   width: 100%;
   background-size: cover;
-  height: 530px;
+  height: 250px;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin-top: 59px;
+  margin-top: 23px;
   margin-bottom: 77px;
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0, 0, 0, .4);
@@ -16,13 +16,13 @@
 
     h3{
       width: 100%;
-      font-size: 62px;
+      font-size: $header-font-size-1;
       width: 100%;
       margin: 0 auto;
       padding: 0 50px;
     }
     p {
-      font-size: 45px;
+      font-size: $header-font-size-2;
           padding: 0 20px;
     }
   }

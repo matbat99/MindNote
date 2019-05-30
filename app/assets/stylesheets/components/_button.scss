@@ -2,7 +2,7 @@
   color: white;
   width: 250px;
   padding: 10px;
-  font-size: 30px;
+  font-size: $header-font-size-2 ;
   border-radius: 26px;
   transition: background-color .2s ease;
   border: none;
@@ -20,8 +20,8 @@
 }
 
 .mn-btn-circle{
-  height: 100px;
-  width: 100px;
+  height: 45px;
+  width: 45px;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
   border-radius: 50%;
   font-size: 61px;
@@ -32,6 +32,11 @@
   align-items: center;
   border: none;
   transition: background-color .2s ease;
+  margin: 0;
+
+  i{
+    font-size: $header-font-size-1;
+  }
 
   &:hover {
     background-color: #ed846c;
@@ -61,7 +66,7 @@
 .mn-btn-lrg {
   color: white;
   padding: 18px 75px;
-  font-size: 33px;
+  font-size: $header-font-size-1;
   border-radius: 42px;
   transition: background-color .2s ease;
   border: none;
