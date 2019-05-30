@@ -1,3 +1,4 @@
+<%= render 'shared/navbar' %>
 <div class="container">
   <div class="page-body">
     <form id="song-search">
@@ -8,9 +9,12 @@
       </div>
      <% end %>
   </div>
-  <div class="modal-footer">
+
     <input type="submit" form="new_song" value="Create Song" class="mn-btn mn-btn-primary">
-    <a href="#" class="mn-btn mn-btn-secondary" data-dismiss="modal">Close</a>
-  </div>
+
 </div>
+<%= link_to root_path do %>
+<p class="mn-btn-circle"><i class="fas fa-arrow-left"></i></p>
+<% end %>
+
 
