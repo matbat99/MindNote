@@ -18,4 +18,10 @@ class SessionsController < ApplicationController
     @practice = Practice.find(params[:practice_id])
     @session = Session.new
   end
+
+  def destroy
+    @session = Session.find(params[:id])
+    raise
+    @session.destroy
+  end
 end
