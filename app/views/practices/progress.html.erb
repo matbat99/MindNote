@@ -1,5 +1,6 @@
+<%= render 'shared/navbar' %>
+<h1>Youre rehearsed songs</h1>
 <div class="review-songs">
-  <h1>Youre rehearsed songs</h1>
   <% @practices.each do |practice| %>
     <div class="song-item">
       <%= link_to "", statistics_practice_path(practice.id), class: "link" %>
@@ -12,4 +13,6 @@
   <% end %>
 </div>
 
-<%= link_to "BACK", root_path %>
+<%= link_to root_path do %>
+<p class="mn-btn-circle"><i class="fas fa-arrow-left"></i></p>
+<% end %>

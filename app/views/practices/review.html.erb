@@ -1,13 +1,27 @@
 <div class="review-songs">
   <h1>Songs due for Review</h1>
-  <% @practices.each do |practice| %>
-    <div class="song-item">
-      <%= image_tag practice.song.album_url, alt: practice.song.title %>
-      <div class="song-item-info">
-        <h2><%= practice.song.title %></h2>
-        <p><%= practice.song.artist.name %></p>
+
+
+  <% if @practices.present? %>
+
+    <% @practices.each do |practice| %>
+      <div class="song-item">
+        <%= image_tag practice.song.album_url, alt: practice.song.title %>
+        <div class="song-item-info">
+          <h2><%= practice.song.title %></h2>
+          <p><%= practice.song.artist.name %></p>
+        </div>
       </div>
-    </div>
+    <% end %>
+
+    <% else %>
+       <div class="song-item">
+        <div class="song-item-info">
+          <h2> Congratulations, you're all caught up!</h2>
+          <p> Nothing is due for review today.</p>
+        </div>
+      </div>
+
   <% end %>
 </div>
 <%= link_to root_path do %>

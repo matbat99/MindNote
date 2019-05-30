@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     practice.active = true
     practice.save
     if session.save
-      flash.notice = "You rehearsed #{practice.song.title}"
+      flash.notice = "You rehearsed #{practice.song.title} and rated it #{practice.sessions.last.grade} stars"
       redirect_to :root
     else
       render practice # don't know if this works
@@ -17,5 +17,10 @@ class SessionsController < ApplicationController
   def new
     @practice = Practice.find(params[:practice_id])
     @session = Session.new
+  end
+
+  def destroy
+    @session = Session.find(params[:id])
+    @session.destroy
   end
 end

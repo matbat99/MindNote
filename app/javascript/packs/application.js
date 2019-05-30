@@ -1,5 +1,6 @@
 import "bootstrap";
 import { searchItunes } from '../plugins/init_itunes_search';
+import { alertClose } from '../plugins/alert_close.js';
 
 
 const searchBox = document.querySelector("#song-search");
@@ -10,3 +11,5 @@ searchBox.addEventListener('keyup', (event) => {
   searchItunes();
 });
 };
+
+alertClose();
