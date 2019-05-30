@@ -7,7 +7,7 @@
     text-align: center;
     outline: none;
     display: block;
-    margin: 40px auto;
+    margin: 10px auto;
     width: 90%;
     padding: 7px;
     border: 1px solid $gray;
@@ -23,7 +23,7 @@
 
 
 #new_song {
-  height: 500px;
+
 }
 
 .song-list input[type=radio]:checked + label {
@@ -32,8 +32,6 @@
 }
 
 .song-list {
-  padding: 10px;
-  height: 525px;
   overflow-y: auto;
 }
 
@@ -46,8 +44,8 @@
   background-color: #F3F3F3;
   transition: background-color .2s ease;
   width: 100%;
-  height: 105px;
-  margin: 10px 0;
+  height: 85px;
+  margin: 6px 0;
   border-radius: 3px;
   box-shadow: 0px 0px 9px rgba(20, 20, 20, 0.25);
   align-items: center;
@@ -64,11 +62,16 @@
     text-align: left;
     flex-grow: 1;
   }
+
   img {
-    height: 85px;
-    min-width: 85px;
-    margin: 10px;
+    height: 65px;
+    min-width: 65px;
+    margin: 5px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.31);
+  }
+
+  h2 {
+    font-size: $header-font-size-2;
   }
 }
 
