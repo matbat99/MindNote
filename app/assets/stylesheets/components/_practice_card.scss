@@ -6,12 +6,12 @@
 
   p {
     text-align: left;
-    font-size: 21px;
+    font-size: $body-font-size-1;
     margin: 0;
   }
 
   h3 {
-    font-size: 18px;
+    font-size: $header-font-size-2;
   }
 }
 
@@ -34,7 +34,7 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    font-size: 34px;
+    font-size: $header-font-size-1;
     margin-top: 15px;
   }
 
@@ -43,7 +43,7 @@
   }
 
   p {
-    font-size: 15px;
+    font-size: $body-font-size-1;
     margin: 0;
     text-align: right;
   }
