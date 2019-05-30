@@ -11,11 +11,14 @@ class SongsController < ApplicationController
       practice = Practice.new(user: current_user, song: song)
       if practice.save
         flash.notice = "You added #{practice.song.title} to your list"
-        redirect_to :root
       else
-        render "home"
+        flash.notice = "This song is already in your list"
       end
+      redirect_to :root
     end
+  rescue JSON::ParserError => e
+    flash.notice = "Sorry something went wrong, please try again"
+    redirect_to :root
   end
 
   private
