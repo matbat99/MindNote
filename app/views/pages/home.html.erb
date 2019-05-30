@@ -3,6 +3,7 @@
 <%= render "practice_card", practices: Practice.urgent_songs(current_user.id)  %>
 
 
+
 <% if current_user.songs.empty? %>
 
   <div class="practice-card sad">
@@ -12,6 +13,7 @@
 <% else %>
 
  <div class="learn-bar">
+  <a href="#" data-toggle="modal", data-target='#ModalScrollable' >
   <h1>Learn a New Song</h1>
   <div class="learn-bar-albums">
     <% @unlearned.each_with_index do |practice, id| %>
