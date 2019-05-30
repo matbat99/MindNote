@@ -2,11 +2,10 @@
   height: 173px;
   width: 100%;
   background-color: white;
-  padding: 17px 38px;
+  padding: 7px 34px;
   border-radius: 6px;
-  padding-bottom: 0px;
-  display:flex;
-  margin-top: 15px;
+  display: flex;
+  margin-top: 20px;
   h1{
     width: 27%;
     font-size: 20px;
@@ -14,19 +13,26 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+    margin-bottom: 0;
     }
+  p{
+    display: flex;
+    align-items: flex-end;
+  }
 }
 
 
 .review-card .details{
   width: 73%;
-  padding-top: 44px;
+  display: flex;
+  align-items: center;
   h1{
     font-size: 31px;
     width: 100%;
   }
   p{
     margin-top: 30px;
+
   }
   a {
     text-decoration: none;

@@ -13,7 +13,6 @@
 <% else %>
 
  <div class="learn-bar">
-  <a href="#" data-toggle="modal", data-target='#ModalScrollable' >
   <h1>Learn a New Song</h1>
   <div class="learn-bar-albums">
     <% @unlearned.each_with_index do |practice, id| %>
@@ -30,8 +29,8 @@
   <h1><%= @songs_due %></h1>
   <div class="details">
     <h1>Songs left to review</h1>
-    <p> <%= link_to "view", review_practices_path %></p>
   </div>
+    <p> <%= link_to "view", review_practices_path %></p>
 </div>
 <% end %>
 
