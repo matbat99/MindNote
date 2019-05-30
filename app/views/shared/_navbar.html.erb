@@ -1,6 +1,11 @@
 <div class="mn-navbar">
   <div class="mn-avatar">
-    <div class="avatar-info"><%= image_tag asset_path("logo"), class: "profile-photo"%>
+    <div class="avatar-info">
+      <% if current_user.photo %>
+        <%= cl_image_tag current_user.photo, class: "profile-photo"%>
+      <% else %>
+        <img src="https://picsum.photos/200/200" alt="profile">
+      <% end %>
       <h3><%= current_user.name %></h3>
     </div>
     <%= image_tag asset_path("mn-logo"), class: "avatar-logo" %>
@@ -10,8 +15,8 @@
       <li class="nav-item dropdown">
         <button id='navbarDropdown' class="mn-menu-btn" type="button" name="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-v"></i></button>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <%= link_to "Statistics", progress_practices_path, class: "dropdown-item" %>
-          <%= link_to "Your songs", practices_path , class: "dropdown-item" %>
+          <%= link_to "Action", "#", class: "dropdown-item" %>
+          <%= link_to "Another action", "#", class: "dropdown-item" %>
           <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
         </div>
       </li>
