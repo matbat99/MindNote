@@ -17,9 +17,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 4px solid $orange;
+  border-bottom: 4px solid $secondary;
 
   i {
     font-size: 45px;
+    color: $secondary;
   }
 }

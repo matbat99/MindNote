@@ -1,9 +1,9 @@
 <div class="mn-navbar">
   <div class="mn-avatar">
     <div class="avatar-info"><%= image_tag asset_path("logo"), class: "profile-photo"%>
-      <h3><%= current_user.email %></h3>
+      <h3><%= current_user.name %></h3>
     </div>
-    <%= image_tag asset_path("mind-note-colored"), class: "avatar-logo" %>
+    <%= image_tag asset_path("mn-logo"), class: "avatar-logo" %>
   </div>
   <div class="second">
     <ul class="navbar-nav mr-auto">
