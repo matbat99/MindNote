@@ -4,6 +4,10 @@ class SongsController < ApplicationController
     @song = Song.new
   end
 
+  def learn
+    @unlearned = current_user.practices.where(active: false)
+  end
+
   def create
     if params[:radios].nil?
       redirect_to root_path

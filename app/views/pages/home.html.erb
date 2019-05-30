@@ -13,6 +13,7 @@
 <% else %>
 
  <div class="learn-bar">
+  <%= link_to "", learn_path, class: "link"  %>
   <h1>Learn a New Song</h1>
   <div class="learn-bar-albums">
     <% @unlearned.each_with_index do |practice, id| %>
@@ -40,33 +41,3 @@
 
 
 
-
-<!-- Modal for create song -->
-
-
-<!-- Modal for learn song -->
-<div class="modal fade" id="ModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
-    <div class="modal-content">
-      <div class="modal-body">
-        <div class="song-list">
-            <% @unlearned.each do |practice| %>
-              <div class="song-item">
-                <img src="<%= practice.song.album_url %>" alt="<%= practice.song.title %>">
-                <div class="song-item-info">
-                  <input type="hidden" name="practice_id" value='<%= practice.id %>'>
-                  <input type="radio" style="display: none" name="radios" id="choice">
-                  <h2><%= practice.song.title %></h2>
-                  <p><%= practice.song.artist.name %></p>
-                </div>
-                <%= link_to "", practice, class: "song-item-link" %>
-              </div>
-            <% end %>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <a href="#" class="mn-btn mn-btn-secondary" data-dismiss="modal">Close</a>
-      </div>
-    </div>
-  </div>
-</div>
