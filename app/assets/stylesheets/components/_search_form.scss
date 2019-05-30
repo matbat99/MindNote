@@ -26,14 +26,14 @@
   height: 500px;
 }
 
-.song-holder input[type=radio]:checked + label {
+.song-list input[type=radio]:checked + label {
 
   background-color: $orange;
 }
 
 .song-list {
   padding: 10px;
-  height: 500px;
+  height: 525px;
   overflow-y: auto;
 }
 

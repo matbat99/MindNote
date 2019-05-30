@@ -7,20 +7,16 @@ const outputToScreen = (songs) => {
   if (songs) {
     let incrementor = 1;
     songs.forEach((song) => {
-      resultList.insertAdjacentHTML('afterbegin',
-          `<div class="form-group">
-              <input type="hidden" name="album_url" value='${song['artworkUrl100']}'>
-              <input type="hidden" name="title" value='${song['trackName']}'>
-              <input type="hidden" name="artist" value='${song['artistName']}'>
-              <input type="radio" style="display: none" name="radios" id="choice-${incrementor}">
-              <label class="song-item" for='choice-${incrementor}'>
-                <img src="${song['artworkUrl100']}" alt="${song['trackName']}">
-                <div class="song-item-info">
-                  <h2>${song['trackName']}</h2>
-                  <p>${song['artistName']}</p>
-                </div>
-              </label>
-            </div>`
+      // debugger
+      resultList.insertAdjacentHTML('beforeend',
+          `<input type="radio" style="display: none" name="radios" id="choice-${incrementor}" value='${JSON.stringify(song)}'>
+            <label class="song-item" for='choice-${incrementor}'>
+              <img src="${song['artworkUrl100']}" alt="${song['trackName']}">
+              <div class="song-item-info">
+                <h2>${song['trackName']}</h2>
+                <p>${song['artistName']}</p>
+              </div>
+            </label>`
         )
       incrementor++;
     })
