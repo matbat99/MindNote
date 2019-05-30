@@ -2,6 +2,7 @@ class Practice < ApplicationRecord
   belongs_to :user
   has_many :sessions
   belongs_to :song
+  validates :song, uniqueness: true
 
   MAX_GRADE = 5
   # D_EF[q] = (0.1 - (MAX_GRADE - grade) * (0.08 + (MAX_GRADE - grade) * 0.02))

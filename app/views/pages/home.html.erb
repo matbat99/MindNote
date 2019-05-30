@@ -1,10 +1,7 @@
-
 <%= render 'shared/navbar' %>
 <%#= image_tag asset_path("mind-note-colored") %>
 <%= render "practice_card", practices: Practice.urgent_songs(current_user.id)  %>
 
-
-<a href="#" data-toggle="modal", data-target='#ModalScrollable' >
 
 <% if current_user.songs.empty? %>
 

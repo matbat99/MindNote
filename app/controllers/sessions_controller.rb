@@ -7,7 +7,13 @@ class SessionsController < ApplicationController
     practice.active = true
     practice.save
     if session.save
-      flash.notice = "You rehearsed #{practice.song.title} and rated it #{practice.sessions.last.grade} stars"
+      if practice.interval == 1
+        day = "Tommorow"
+      else
+        day = "on #{DateTime.now + practice.interval}"
+      end
+
+      flash.notice = "You rehearsed #{practice.song.title} and rated it #{practice.sessions.last.grade} stars. See you #{day}"
       redirect_to :root
     else
       render practice # don't know if this works
