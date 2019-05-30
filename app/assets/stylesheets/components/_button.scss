@@ -33,7 +33,7 @@
   margin: 0;
 
   i{
-    font-size: $body-font-size-1;
+    font-size: 27px;
   }
 
   &:hover {
@@ -63,7 +63,7 @@
 
 .mn-btn-lrg {
   color: white;
-  padding: 18px 75px;
+  padding: 6px 40px;
   font-size: $header-font-size-1;
   border-radius: 42px;
   transition: background-color .2s ease;
