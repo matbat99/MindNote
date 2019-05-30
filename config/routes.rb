@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  get 'songs/create'
-
-  # get '/paractices/progress', to: 'practices#progress', as: 'progress' ---> do collection <----- not id
-  # get '/practices/statistics/:id', to: 'practices#statistics', as: 'statistics' ---> do member <----- id
 
   devise_for :users
   root to: 'pages#home'
