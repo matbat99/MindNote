@@ -1,5 +1,11 @@
 <%= render 'shared/navbar' %>
-<h1 class="page-header">Your rehearsed songs</h1>
+
+<div class="d-flex align-items-center">
+  <%= link_to root_path do %>
+    <p class="mn-btn-circle mn-btn-circle-secondary"><i class="fas fa-arrow-left"></i></p>
+  <% end %>
+  <h1 class="page-title">Your rehearsed songs</h1>
+</div>
 <div class="review-songs">
   <% @practices.each do |practice| %>
     <div class="song-item">
@@ -12,7 +18,3 @@
     </div>
   <% end %>
 </div>
-
-<%= link_to root_path do %>
-<p class="mn-btn-circle"><i class="fas fa-arrow-left"></i></p>
-<% end %>
