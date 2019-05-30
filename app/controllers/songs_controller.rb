@@ -10,7 +10,7 @@ class SongsController < ApplicationController
       practice = Practice.new(user: current_user, song: song)
       if practice.save
         flash.notice = "You added #{practice.song.title}"
-        redirect_to practice_path(practice)
+        redirect_to :root
       else
         render "home"
       end
