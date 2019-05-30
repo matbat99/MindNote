@@ -1,12 +1,9 @@
 class SongsController < ApplicationController
   def create
-
-    song_data = JSON.parse(params[:radios])
-    if song_data["artistName"].nil?
-
-    #test if anything came in params -- in case user backs out without selection
+    if params[:radios].nil?
       redirect_to root_path
     else
+      song_data = JSON.parse(params[:radios])
       artist = Artist.find_or_create_by(name: song_data["artistName"])
       album = song_data["artworkUrl100"]
       album.gsub!(/source\/*.*.jpg/, "source/600x600bb.jpg")
