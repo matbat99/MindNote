@@ -7,6 +7,7 @@ class SessionsController < ApplicationController
     practice.active = true
     practice.save
     if session.save
+      flash.notice = "You rehearsed #{practice.song.title}"
       redirect_to :root
     else
       render practice # don't know if this works

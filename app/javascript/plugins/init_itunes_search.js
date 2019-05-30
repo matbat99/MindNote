@@ -7,9 +7,8 @@ const outputToScreen = (songs) => {
   if (songs) {
     let incrementor = 1;
     songs.forEach((song) => {
-      // debugger
       resultList.insertAdjacentHTML('beforeend',
-          `<input type="radio" style="display: none" name="radios" id="choice-${incrementor}" value='${JSON.stringify(song)}'>
+          `<input type="radio" style="display: none" name="radios" id="choice-${incrementor}" value='${JSON.stringify(song)}' required>
             <label class="song-item" for='choice-${incrementor}'>
               <img src="${song['artworkUrl100']}" alt="${song['trackName']}">
               <div class="song-item-info">
