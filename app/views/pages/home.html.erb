@@ -20,6 +20,7 @@
     <% @unlearned.each_with_index do |practice, id| %>
       <% unless practice.song.album_url.nil? %>
         <%= image_tag image_url(practice.song.album_url) %>
+        <% break if id == 3%>
       <% end %>
     <% end %>
     </div>
