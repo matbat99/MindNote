@@ -1,22 +1,25 @@
 <%= render 'shared/navbar' %>
-<h1>Number of times rehearsed: <%= @practice.sessions.count %></h1>
+<h1 class="page-header"><%= @practice.song.title %> by <%= @practice.song.artist.name %></h1>
 <div class="practice-card">
   <% averages = [] %>
-   <% @practice.sessions.each do |session| %>
-     <% averages << session.grade %>
-   <% end %>
-   <% if averages.length == 0 %>
-    <h1>You haven't reheares this song!</h1>
-   <% else %>
-     <% average = averages.sum / averages.length %>
-    <h1> Your average rating: <%= average  %></h1>
+  <% @practice.sessions.each do |session| %>
+    <% averages << session.grade %>
   <% end %>
+
+  <% if averages.length == 0 %>
+    <p class="text-center">You haven't rehearsed this song yet!</p>
+  <% else %>
+    <% average = averages.sum / averages.length %>
+    <h3>Number of times rehearsed: <%= @practice.sessions.count %></h3>
+    <h3 class="mb-3"> Your average rating: <%= average  %></h3>
+  <% end %>
+
   <% if @practice.sessions.count == 0 %>
     <h1 class="mn-btn linear-bg center relative">Start rehearsal
       <%= link_to "", practice_path(@practice.id), class: "link" %>
     </h1>
   <% else %>
-
-    <h1>You started rehearsing this song on <%= @practice.sessions.first.created_at.strftime("%A, %b %d") %></h1>
+    <p class="text-center">You started this song on <%= @practice.sessions.first.created_at.strftime("%A, %b %d") %></p>
   <% end %>
 </div>
+
