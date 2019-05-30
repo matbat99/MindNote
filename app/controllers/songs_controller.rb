@@ -1,4 +1,9 @@
 class SongsController < ApplicationController
+
+  def new
+    @song = Song.new
+  end
+
   def create
     if params[:radios].nil?
       redirect_to root_path
