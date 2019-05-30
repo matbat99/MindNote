@@ -3,8 +3,8 @@
 <% @practices.each do |practice| %>
   <ul>
     <li>
-      <%= practice.song.title %> <%= link_to "💣", practice_path(practice), method: :delete %>
-      <%= link_to "🎼", learn_practice_path(practice) %>
+      <%= practice.song.title %>
+
     </li>
   </ul>
 <% end %>

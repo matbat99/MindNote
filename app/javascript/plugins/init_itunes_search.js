@@ -12,7 +12,7 @@ const outputToScreen = (songs) => {
               <input type="hidden" name="album_url" value='${song['artworkUrl100']}'>
               <input type="hidden" name="title" value='${song['trackName']}'>
               <input type="hidden" name="artist" value='${song['artistName']}'>
-              <input type="radio" style="display: none" name="radios" id="choice-${incrementor}">
+              <input type="radio" style="display: none" name="radios" id="choice-${incrementor}" required>
               <label class="song-item" for='choice-${incrementor}'>
                 <img src="${song['artworkUrl100']}" alt="${song['trackName']}">
                 <div class="song-item-info">
