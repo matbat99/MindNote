@@ -1,3 +1,4 @@
+<%= render 'shared/navbar' %>
 <div class="container">
   <div class="song-list">
       <% @unlearned.each do |practice| %>
@@ -14,3 +15,6 @@
       <% end %>
   </div>
 </div>
+<%= link_to root_path do %>
+<p class="mn-btn-circle"><i class="fas fa-arrow-left"></i></p>
+<% end %>
