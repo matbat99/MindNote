@@ -12,7 +12,13 @@
 
 <% else %>
 
+  <% inactive_practices = current_user.practices.select{|practice| practice.active == false} %>
+  <% if inactive_practices.empty? %>
+    <div class="practice-card sad">
+      <h1>Tap the + button to add a song!</h1>
+    </div>
 
+  <% else %>
  <div class="learn-bar">
   <%= link_to "", learn_path, class: "link"  %>
   <h1>Learn a New Song</h1>
@@ -25,6 +31,8 @@
     </div>
     <p>Tap to Choose</p>
   </div>
+  <% end %>
+
 
   <% if @songs_due == 0 %>
   <div class="review-card">
