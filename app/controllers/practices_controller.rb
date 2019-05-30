@@ -10,10 +10,11 @@ class PracticesController < ApplicationController
 
   def destroy
     @practice = Practice.find(params[:id])
+    message_holder = @practice.song.title
     @sessions = @practice.sessions
-    @sessions.each { |sesison| session.destroy }
+    @sessions.each { |session| session.destroy }
     @practice.destroy
-    flash.notice = "Song removed"
+    flash.notice = "#{message_holder} removed from your list"
     redirect_to practices_path
   end
 
