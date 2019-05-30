@@ -1,7 +1,7 @@
-<%= render 'shared/navbar' %>
 
+<%= render 'shared/navbar' %>
+<h1>Your songs</h1>
 <div class="review-songs">
-  <h1>Your songs</h1>
   <% @practices.each do |practice| %>
     <div class="song-item">
       <%= image_tag practice.song.album_url, alt: practice.song.title %>

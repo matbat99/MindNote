@@ -1,5 +1,6 @@
+<%= render 'shared/navbar' %>
+<h1>Number of times rehearsed: <%= @practice.sessions.count %></h1>
 <div class="practice-card">
-  <h1>Number of times rehearsed: <%= @practice.sessions.count %></h1>
   <% averages = [] %>
    <% @practice.sessions.each do |session| %>
      <% averages << session.grade %>
