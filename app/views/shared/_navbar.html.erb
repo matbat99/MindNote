@@ -15,8 +15,8 @@
       <li class="nav-item dropdown">
         <button id='navbarDropdown' class="mn-menu-btn" type="button" name="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-v"></i></button>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <%= link_to "Action", "#", class: "dropdown-item" %>
-          <%= link_to "Another action", "#", class: "dropdown-item" %>
+          <%= link_to "My Statistics", progress_practices_path, class: "dropdown-item" %>
+          <%= link_to "My Songs", practices_path, class: "dropdown-item" %>
           <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
         </div>
       </li>
