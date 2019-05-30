@@ -37,32 +37,13 @@
 
 
 
-<button type="button" class="mn-btn-circle botom-right-corner" data-toggle="modal" data-target="#ModalCenter">
-  +
-</button>
+<%= link_to "+", new_song_path, class: "mn-btn-circle botom-right-corner"  %>
+
 
 
 
 <!-- Modal for create song -->
-<div class="modal fade" id="ModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-body">
-        <form id="song-search">
-          <input type="text" class="query" placeholder="Search for a Song">
-        </form>
-         <%= form_for(@song) do |f| %>
-          <div class="song-list">
-          </div>
-         <% end %>
-      </div>
-      <div class="modal-footer">
-        <input type="submit" form="new_song" value="Create Song" class="mn-btn mn-btn-primary">
-        <a href="#" class="mn-btn mn-btn-secondary" data-dismiss="modal">Close</a>
-      </div>
-    </div>
-  </div>
-</div>
+
 
 <!-- Modal for learn song -->
 <div class="modal fade" id="ModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
