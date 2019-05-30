@@ -10,12 +10,12 @@
 }
 
 .mn-btn-primary {
-  background-color: $orange;
+  background-color: $primary;
 
   &:hover {
-    background-color: #f9966d;
+    background-color: #ed846c;
     text-decoration: none;
-    color: white;
+    color: white !important;
   }
 }
 
@@ -26,15 +26,32 @@
   border-radius: 50%;
   font-size: 61px;
   color: white;
-  background: linear-gradient(208.57deg, #FD8281 14.54%, #FE8451 90.24%);
+  background-color: $primary;
   display: flex;
   justify-content: center;
   align-items: center;
   border: none;
+  transition: background-color .2s ease;
+
+  &:hover {
+    background-color: #ed846c;
+    text-decoration: none;
+    color: white !important;
+  }
+}
+
+.mn-btn-circle-secondary {
+  background-color: $secondary;
+
+  &:hover {
+    background-color: #213d77;
+    text-decoration: none;
+    color: white !important;
+  }
 }
 
 .linear-bg{
-  background: linear-gradient(208.57deg, #FD8281 14.54%, #FE8451 90.24%);
+  background-color: $primary;
 }
 
 .position-abs{
@@ -43,7 +60,6 @@
 
 .mn-btn-lrg {
   color: white;
-  width: 250px;
   padding: 18px 75px;
   font-size: 33px;
   border-radius: 42px;
@@ -58,12 +74,22 @@
 }
 
 .mn-btn-secondary {
-  background-color: $pink;
+  background-color: $secondary;
 
   &:hover {
-    background-color: #f79292;
+    background-color: #213d77;
     text-decoration: none;
-    color: white;
+    color: white !important;
+  }
+}
+
+.mn-btn-tertiary {
+  background-color: $tertiary;
+
+  &:hover {
+    background-color: #bef2db;
+    text-decoration: none;
+    color: white !important;
   }
 }
 
