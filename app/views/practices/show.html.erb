@@ -1,7 +1,4 @@
-
-<%= link_to root_path do %>
-<p class="mn-btn-circle"><i class="fas fa-arrow-left"></i></p>
-<% end %>
+<%= render 'shared/navbar' %>
 
 
 <div class="song-card" style="background-image: linear-gradient(208.57deg, rgba(0, 0, 0, 0.5 ), rgba(0, 0, 0, 0.8)), url('<%= @practice.song.album_url %>')">
