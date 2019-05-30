@@ -25,7 +25,7 @@
   background-color: white;
   justify-content: space-between;
   align-items: center;
-  padding: 15px;
+  padding: 5px 15px;
   border-radius: 50px;
   box-shadow: 0 0 8px rgba(0, 0, 0, .31);
 
@@ -43,6 +43,7 @@
       border-radius: 50%;
       object-fit: cover;
       width: 40px;
+      height: 40px
     }
   }
 
