@@ -21,6 +21,7 @@
       <% unless practice.song.album_url.nil? %>
         <%= image_tag image_url(practice.song.album_url) %>
       <% end %>
+    <% end %>
     </div>
     <p>Tap to Choose</p>
   </div>
@@ -44,6 +45,8 @@
 
 
 <%= link_to "+", new_song_path, class: "mn-btn-circle botom-right-corner"  %>
+
+
 
 
 
