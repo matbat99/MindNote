@@ -1,6 +1,6 @@
 class SongsController < ApplicationController
   def create
-    raise
+
     #test if anything came in params -- in case user backs out without selection
     if params[:artist].nil?
       redirect_to root_path
