@@ -8,7 +8,7 @@ const outputToScreen = (songs) => {
     let incrementor = 1;
     songs.forEach((song) => {
       resultList.insertAdjacentHTML('beforeend',
-          `<input type="radio" style="display: none" name="radios" id="choice-${incrementor}" value='${JSON.stringify(song)}' required>
+          `<input type="radio" style="display: none" name="radios" id="choice-${incrementor}" value='' required>
             <label class="song-item" for='choice-${incrementor}'>
               <img src="${song['artworkUrl100']}" alt="${song['trackName']}">
               <div class="song-item-info">
@@ -17,6 +17,7 @@ const outputToScreen = (songs) => {
               </div>
             </label>`
         )
+        document.getElementById(`choice-${incrementor}`).value = JSON.stringify(song);
       incrementor++;
     })
   }
@@ -25,12 +26,13 @@ const outputToScreen = (songs) => {
 const searchItunes =()=> {
   const searchTerm= event.currentTarget.querySelector('.query');
   const baseUrl = "https://itunes.apple.com/search?term="
-  fetch(baseUrl+searchTerm.value+"&entity=song&limit=4")
+  const url = `${baseUrl}${searchTerm.value}&entity=song&limit=4`
+  fetch(url)
   .then(response => response.json())
   .then((data)=> {
     console.log(data);
     outputToScreen(data.results);
-  });
+  }).catch(error => console.error(error));
 }
 
 export { searchItunes }
