@@ -24,6 +24,14 @@ class PracticesController < ApplicationController
 
   def progress
     @practices = current_user.practices
+    @user_total_sessions = []
+    @practices.select { |practice| practice.sessions.each { |session| @user_total_sessions << session } }
+    @last_session = @user_total_sessions.max_by {|session| session.created_at }
+    grade_sum = 0
+    @user_total_sessions.each { |session| grade_sum += session.grade }
+    @average_grade = grade_sum / @user_total_sessions.count
+    @number_of_total_sessions = 0
+    @practices.each { |practice| @number_of_total_sessions += practice.sessions.count}
   end
 
   def statistics
@@ -34,7 +42,6 @@ class PracticesController < ApplicationController
 
   def find_song
     @practice = Practice.find(params[:id])
-
   end
 
   # def song_search
