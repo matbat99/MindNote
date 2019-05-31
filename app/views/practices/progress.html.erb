@@ -1,18 +1,42 @@
 <%= render 'shared/navbar' %>
 
 
-<p> You joined MindNote on <%= current_user.created_at.strftime("%A, %b %d") %></p>
-<p> Number of songs practiced: <%= (@practices.select { |practice| practice.sessions.count > 0 }).count  %></p>
-<p>Songs in your repertoire: <%= @practices.count %></p>
-<p>Total Rehearsals: <%= @number_of_total_sessions %> </p>
-<p>Last song rehearsed:
-<%= @last_session.practice.song.title %> by
-<%= @last_session.practice.song.artist.name %> by on
-<%= @last_session.created_at.strftime("%A, %b %d") %> </p>
-<p>Average rehearsal grade: <%= @average_grade %> </p>
+  <div class="stat-card center">
+    <p>image</p>
+    <h2>Joined</h2>
+    <p><%= current_user.created_at.strftime("%A, %b %d") %></p>
+  </div>
 
 
+  <div class="stat-card center">
+    <p>image</p>
+    <h2> Songs practiced</h2>
+    <p><%= (@practices.select { |practice| practice.sessions.count > 0 }).count  %></p>
+  </div>
 
+  <div class="stat-card center">
+    <p>image</p>
+    <h2>Repertoire</h2>
+    <p><%= @practices.count %> songs</p>
+  </div>
 
+  <div class="stat-card center">
+    <p>image</p>
+    <p>Rehearsals</h2>
+    <p><%= @number_of_total_sessions %></p>
+  </div>
 
+  <div class="stat-card center">
+    <p>image</p>
+    <h2>Last Practice</h2>
+    <p><%= @last_session.practice.song.title %></p>
+    <p><%= @last_session.practice.song.artist.name %></p>
+    <p><%= @last_session.created_at.strftime("%A, %b %d") %></p>
+  </div>
+
+  <div class="stat-card center">
+    <p>image</p>
+    <h2>Grade average</h2>
+    <p>Average rehearsal grade: <%= @average_grade %> </p>
+  </div>
 

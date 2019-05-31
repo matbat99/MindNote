@@ -1,3 +1,19 @@
+.stat-card{
+  position: relative;
+  height: 200px;
+  width: 200px;
+  background-color: white;
+  padding: 15px 25px;
+  border-radius: 3px;
+  padding-top: 55px;
+  h2{
+    font-size: $header-font-size-2;
+  }
+  p{
+    font-size: 12px;
+  }
+}
+
 .practice-card{
   position: relative;
   background-color: white;
