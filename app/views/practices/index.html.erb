@@ -16,7 +16,7 @@
       </div>
       <div class="trash">
         <div class="relative">
-      <%= link_to "", practice_path(practice), method: :delete, class: "link" %>
+      <%= link_to "", practice_path(practice), method: :delete, data: { confirm: 'Are you sure?' }, class: "link" %>
         <i class="fas fa-trash-alt"></i>
         </div>
         <div class="relative">
