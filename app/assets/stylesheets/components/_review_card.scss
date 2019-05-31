@@ -1,12 +1,16 @@
 .review-card{
   height: 125px;
   width: 100%;
+  position: relative;
   background-color: white;
   padding: 7px 10px;
   border-radius: 6px;
   display: flex;
   margin-top: 15px;
-  h1{
+  h1>span {
+    font-size: 50px;
+  }
+  h1 {
     width: 27%;
     font-size: $header-font-size-1;
     display: flex;
@@ -14,9 +18,11 @@
     justify-content: space-around;
     margin-bottom: 0;
     }
-  p{
+  p {
+    font-size: $body-font-size-1;
     display: flex;
     align-items: flex-end;
+    margin-bottom: 5px;
   }
 }
 
