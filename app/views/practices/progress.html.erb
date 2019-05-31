@@ -1,20 +1,27 @@
 <%= render 'shared/navbar' %>
 
-<div class="d-flex align-items-center">
-  <%= link_to root_path do %>
-    <p class="mn-btn-circle mn-btn-circle-secondary"><i class="fas fa-arrow-left"></i></p>
-  <% end %>
-  <h1 class="page-title">Your rehearsed songs</h1>
-</div>
-<div class="review-songs">
-  <% @practices.each do |practice| %>
-    <div class="song-item">
-      <%= link_to "", statistics_practice_path(practice.id), class: "link" %>
-      <%= image_tag practice.song.album_url, alt: practice.song.title %>
-      <div class="song-item-info">
-        <h2><%= practice.song.title %></h2>
-        <p><%= practice.song.artist.name %></p>
-      </div>
-    </div>
-  <% end %>
-</div>
+<p> You joined MindNote on <%= current_user.created_at.strftime("%A, %b %d") %></p>
+
+<p> Number of songs practiced: <%= (@practices.select {|practice| practice.sessions.count > 0 }).count  %></p>
+
+<p>Songs in your repertoire: <%= @practices.count %></p>
+
+<% number_of_total_sessions = 0 %>
+<% @practices.each { |practice| number_of_total_sessions += practice.sessions.count} %>
+<p>Total Rehearsals: <%= number_of_total_sessions %> </p>
+
+<% user_total_sessions = [] %>
+<% @practices.select {|practice| practice.sessions.each { |session| user_total_sessions << session }  } %>
+<p>Last song rehearsed:
+<% #calculates latest date of all sessions %>
+<% last_session = user_total_sessions.sort_by {|session| session.created_at }.last %>
+<%= last_session.practice.song.title %> by
+<%= last_session.practice.song.artist.name %> by on
+<%= last_session.created_at.strftime("%A, %b %d") %> </p>
+
+
+<% grade_sum = 0 %>
+<% user_total_sessions.each { |session| grade_sum += session.grade} %>
+<% average_grade = grade_sum / user_total_sessions.count %>
+<p>Average rehearsal grade: </p>
+
