@@ -42,11 +42,12 @@
 
   <% else %>
     <div class="review-card">
-      <h1><%= @songs_due %></h1>
+      <h1><span><%= @songs_due %></span></h1>
       <div class="details">
         <h1>Songs left to review</h1>
       </div>
-        <p> <%= link_to "view", review_practices_path %></p>
+      <p>View</p>
+      <%= link_to "", review_practices_path, class: "song-item-link" %>
     </div>
   <% end %>
 <% end %>
@@ -54,8 +55,3 @@
 
 
 <%= link_to "+", new_song_path, class: "mn-btn-circle botom-right-corner"  %>
-
-
-
-
-
