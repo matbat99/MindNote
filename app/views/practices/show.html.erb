@@ -1,4 +1,5 @@
 
+
 <%= render 'shared/navbar' %>
 
 <%= link_to root_path do %>
@@ -15,4 +16,8 @@
   </div>
 </div>
 
-<%= link_to "Start Rehearsal", new_practice_session_path(@practice), class: "mn-btn-primary mn-btn-lrg"%>
+<div>
+  <p> Go ahead and practice, Click Rate Practice when finished</p>
+</div>
+
+<%= link_to "Rate Rehearsal", new_practice_session_path(@practice), class: "mn-btn-primary mn-btn-lrg"%>
