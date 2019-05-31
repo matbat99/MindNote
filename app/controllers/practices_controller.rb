@@ -32,7 +32,7 @@ class PracticesController < ApplicationController
     @user_total_sessions.each { |session| grade_sum += session.grade }
     @average_grade = grade_sum / @user_total_sessions.count
     @number_of_total_sessions = 0
-    @practices.each { |practice| @number_of_total_sessions += practice.sessions.count}
+    @practices.each { |practice| @number_of_total_sessions += practice.sessions.count }
   end
 
   def statistics
