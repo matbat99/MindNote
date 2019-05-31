@@ -65,6 +65,7 @@
 
 .trash{
   display: flex;
+  flex-direction: column;
   align-items: flex-end;
   height: 100%;
   padding: 20px;
