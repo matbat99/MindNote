@@ -2,7 +2,7 @@ class Practice < ApplicationRecord
   belongs_to :user
   has_many :sessions
   belongs_to :song
-  validates :song, uniqueness: true
+  validates :song, uniqueness: { scope: :user_id, message: "You have already added this song" }
 
   MAX_GRADE = 5
   # D_EF[q] = (0.1 - (MAX_GRADE - grade) * (0.08 + (MAX_GRADE - grade) * 0.02))
