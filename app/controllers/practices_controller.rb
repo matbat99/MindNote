@@ -6,6 +6,7 @@ class PracticesController < ApplicationController
   end
 
   def show
+
   end
 
   def destroy
