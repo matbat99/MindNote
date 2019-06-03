@@ -15,13 +15,13 @@ function startTimer(){
     tInterval = setInterval(getShowTime, 100);
     paused = 0;
     running = 1;
-    timerDisplay.style.background = "#D4C685";
-    timerDisplay.style.cursor = "auto";
-    timerDisplay.style.color = "yellow";
-    startTimerButton.classList.add('lighter');
-    pauseTimerButton.classList.remove('lighter');
-    startTimerButton.style.cursor = "auto";
-    pauseTimerButton.style.cursor = "pointer";
+    startTimerButton.innerHTML="<i class='fas fa-pause'></i>";
+
+
+  }
+  else {
+    startTimerButton.innerHTML="<i class='fas fa-play'></i>";
+    pauseTimer();
   }
 }
 
@@ -33,13 +33,6 @@ function pauseTimer(){
     savedTime = difference;
     paused = 1;
     running = 0;
-    timerDisplay.style.background = "#A7D3A6";
-    timerDisplay.style.color = "#690000";
-    timerDisplay.style.cursor = "pointer";
-    startTimerButton.classList.remove('lighter');
-    pauseTimerButton.classList.add('lighter');
-    startTimerButton.style.cursor = "pointer";
-    pauseTimerButton.style.cursor = "auto";
   } else {
 // if the timer was already paused, when they click pause again, start the timer again
 startTimer();
@@ -52,12 +45,6 @@ function endRehearse(){
   difference = 0;
   paused = 0;
   running = 0;
-  timerDisplay.innerHTML = 'Begin';
-  timerDisplay.style.background = "#A7D3A6";
-  timerDisplay.style.color = "#fff";
-  timerDisplay.style.cursor = "pointer";
-  startTimerButton.classList.remove('lighter');
-  pauseTimerButton.classList.remove('lighter');
 }
 
 function getShowTime(){
@@ -76,8 +63,8 @@ function getShowTime(){
   timerDisplay.innerHTML = hours + ':' + minutes + ':' + seconds;
 }
 
-export {pauseTimer}
+
 export {startTimer}
 export {endRehearse}
-export {getShowTime}
+
 

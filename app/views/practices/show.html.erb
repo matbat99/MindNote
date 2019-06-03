@@ -8,24 +8,23 @@
 
 
 <div class="song-card" style="background-image: linear-gradient(208.57deg, rgba(0, 0, 0, 0.5 ), rgba(0, 0, 0, 0.8)), url('<%= @practice.song.album_url %>')">
+  <div class="timer">Begin Practice</div>
   <div class="song-card-info">
-  <div class="timer">Begin</div>
     <h3><%= @practice.song.title %></h3>
     <p><%= @practice.song.artist.name %></p>
   </div>
-<div id="timerContainer">
-  <div class="startTimer" >
+
+  <div id="timerContainer">
+    <div class="startTimer" >
       <i class="fas fa-play"></i>
     </div>
-  <div class="pauseTimer" >
-      <i class="fas fa-pause"></i>
-    </div>
-</div>
-</div>
-
-
-
-  <div class="resetTimer reset">
-  <%= link_to "", new_practice_session_path(@practice), class: 'link' %>
-    END
   </div>
+
+  <div class="resetTimer">
+    <%= link_to "END", new_practice_session_path(@practice), class: 'mn-btn mn-btn-primary' %>
+  </div>
+
+</div>
+
+
+
