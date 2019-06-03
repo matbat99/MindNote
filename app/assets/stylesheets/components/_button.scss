@@ -1,5 +1,6 @@
 .mn-btn {
   color: white;
+  display: block;
   padding: 10px;
   font-size: $header-font-size-2;
   border-radius: 26px;
@@ -64,6 +65,7 @@
 .mn-btn-lrg {
   color: white;
   padding: 6px 40px;
+  display: block;
   font-size: $header-font-size-1;
   border-radius: 42px;
   transition: background-color .2s ease;
@@ -127,4 +129,8 @@
   width: 100%;
   height: 100%;
 
+}
+
+.end-btn {
+  margin: 20px 5px;
 }

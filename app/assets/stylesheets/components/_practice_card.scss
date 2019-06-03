@@ -1,3 +1,31 @@
+.practice-card {
+  height: 50vh;
+  background-size: cover;
+  color: white;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 10px;
+
+  h3 {
+    font-size: $header-font-size-2;
+  }
+
+  h1 {
+    font-size: $header-font-size-1;
+  }
+
+  a {
+    width: 92%;
+    margin: 0 auto;
+  }
+
+  .text-left {
+    text-align: left;
+  }
+}
+
 .stat-card{
   position: relative;
   height: 150px;
@@ -15,24 +43,6 @@
   }
 }
 
-.practice-card{
-  position: relative;
-  background-color: white;
-  padding: 10px;
-  border-radius: 3px;
-
-  h1 {
-    text-align: left;
-    font-size: $header-font-size-2;
-    margin: 0;
-  }
-
-  h3 {
-    font-size: $header-font-size-2;
-  }
-}
-
-
 .info{
   display: flex;
   margin-top: 5px;
@@ -40,32 +50,6 @@
     height: 90px;
     width: 90px;
     box-shadow: 0 0 4px rgba(0, 0, 0, .31);
-  }
-}
-
-.details{
-  flex-grow: 3;
-  text-align: center;
-
-  h1{
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    font-size: $header-font-size-2;
-    margin-top: 15px;
-    margin-left: 13px;
-    width: 223px;
-  }
-  h3 {
-    margin-top: 5px;
-    margin-left: 13px;
-    text-align: left;
-    font-size: $body-font-size-1;
-  }
-  p {
-    font-size: $body-font-size-1;
-    margin: 15px 10px 0 0;
-    text-align: right;
   }
 }
 
@@ -87,4 +71,10 @@
   align-items: flex-end;
   height: 100%;
   padding: 20px;
+}
+
+.practice-queue {
+  height: 30vh;
+  overflow: scroll;
+
 }

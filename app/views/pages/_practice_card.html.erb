@@ -1,19 +1,14 @@
-<% if practices.empty? %>
+<% unless practice %>
   <div class="practice-card sad">
     <h1>Select a song to learn!</h1>
   </div>
 <% else %>
-  <div class="practice-card">
-    <h1>Up next to practice:</h1>
-    <div class="info">
-      <%= image_tag practices.first.song.album_url %>
-      <div class="details">
-        <h1><%= practices.first.song.title %></h1>
-        <h3><%= practices.first.song.artist.name %></h3>
-        <p>Tap to practice</p>
-      </div>
+  <div class="practice-card" style="background-image: linear-gradient(208.57deg, rgba(0, 0, 0, 0.5 ), rgba(0, 0, 0, 0.8)), url('<%= practice.song.album_url %>')">
+    <h3 class="text-left">Up next to practice:</h3>
+    <div class="details">
+      <h1><%= practice.song.title %></h1>
+      <h3><%= practice.song.artist.name %></h3>
     </div>
-    <%= link_to "", practice_path(practices.first.id), class: "song-item-link"  %>
+    <%= link_to "Practice", practice_path(practice.id), class: "mn-btn mn-btn-primary"  %>
   </div>
-
-  <% end %>
+<% end %>

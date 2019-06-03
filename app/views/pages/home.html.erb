@@ -1,57 +1,19 @@
 <%= render 'shared/navbar' %>
 <%#= image_tag asset_path("mind-note-colored") %>
-<%= render "practice_card", practices: Practice.urgent_songs(current_user.id)  %>
-
-
-
-<% if current_user.songs.empty? %>
-
-  <div class="practice-card sad">
-      <h1>Tap the + button to add a song!</h1>
-  </div>
-
-<% else %>
-
-  <% inactive_practices = current_user.practices.select{|practice| practice.active == false} %>
-  <% if inactive_practices.empty? %>
-    <div class="practice-card sad">
-      <h1>Tap the + button to add a song!</h1>
-    </div>
-
-  <% else %>
- <div class="learn-bar">
-  <%= link_to "", learn_path, class: "link"  %>
-  <h1>Learn a New Song</h1>
-  <div class="learn-bar-albums">
-    <% @unlearned.each_with_index do |practice, id| %>
-      <% unless practice.song.album_url.nil? %>
-        <%= image_tag image_url(practice.song.album_url) %>
-        <% break if id == 3%>
-      <% end %>
-    <% end %>
-    </div>
-    <p>Tap to Choose</p>
-  </div>
-  <% end %>
-
-
-  <% if @songs_due == 0 %>
-  <div class="review-card">
-    <h6 class="cero-review">No more songs left to review today. Good job!</h6>
-  </div>
-
-  <% else %>
-    <div class="review-card">
-      <h1><span><%= @songs_due %></span></h1>
-      <div class="details">
-        <h1>Songs left to review</h1>
+<%= render "practice_card", practice: @first  %>
+<h3>Practice Queue</h3>
+<div class="practice-queue">
+  <% @songs_due.each_with_index do |practice, id| %>
+    <% unless id == 0 %>
+      <div class="song-item">
+        <%= image_tag practice.song.album_url, alt: practice.song.title %>
+        <div class="song-item-info">
+          <h2><%= practice.song.title %></h2>
+          <p><%= practice.song.artist.name %></p>
+        </div>
+        <%= link_to "", practice_path(practice.id), class: "song-item-link"  %>
       </div>
-      <p>View</p>
-      <%= link_to "", review_practices_path, class: "song-item-link" %>
-    </div>
+    <% end %>
   <% end %>
-<% end %>
-
-
-
-<%= link_to "+", new_song_path, class: "mn-btn-circle botom-right-corner"  %>
+  <%= link_to "Learn a new song", learn_path, class: "mn-btn-lrg mn-btn-secondary end-btn"  %>
+</div>
