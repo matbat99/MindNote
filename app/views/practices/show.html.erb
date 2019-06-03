@@ -20,8 +20,8 @@
 </div>
 
 <%= form_for ([@practice,@note]) do |f| %>
-  <div class="hey">
-    <%= f.text_area :content %>
-    <%= f.submit "Done", class: "mn-btn mn-btn-primary" %>
+  <div class="form-practice-show-container">
+    <%= f.text_area :content, placeholder: "make a note" %>
+    <%= f.submit "Done", class: "mn-btn mn-btn-primary center" %>
   </div>
 <% end %>

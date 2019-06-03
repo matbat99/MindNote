@@ -8,12 +8,26 @@ import { endRehearse} from '../plugins/init_practice_timer'
 
 
 const searchBox = document.querySelector("#song-search");
+const searchBoxText = document.querySelector('#song-search .query');
+const noteContent = document.querySelector('.form-practice-show-container #note_content')
 
 if(searchBox) {
 searchBox.addEventListener('keyup', (event) => {
   event.preventDefault();
   searchItunes();
 });
+};
+
+if(searchBoxText) {
+  searchBoxText.addEventListener('click', (event) => {
+    searchBoxText.placeholder= "";
+  });
+};
+
+if(noteContent) {
+  noteContent.addEventListener('click', (event) => {
+    noteContent.placeholder= "";
+  });
 };
 
 alertClose();
