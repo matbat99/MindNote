@@ -2,22 +2,29 @@
 
 <%= render 'shared/navbar' %>
 
-<%= link_to root_path do %>
-<p class="mn-btn-circle mn-btn-secondary"><i class="fas fa-arrow-left"></i></p>
-<% end %>
+
 
 
 
 
 <div class="song-card" style="background-image: linear-gradient(208.57deg, rgba(0, 0, 0, 0.5 ), rgba(0, 0, 0, 0.8)), url('<%= @practice.song.album_url %>')">
+  <div class="timer">Begin Practice</div>
   <div class="song-card-info">
     <h3><%= @practice.song.title %></h3>
     <p><%= @practice.song.artist.name %></p>
   </div>
+
+  <div id="timerContainer">
+    <div class="startTimer" >
+      <i class="fas fa-play"></i>
+    </div>
+  </div>
+
+  <div class="resetTimer">
+    <%= link_to "END", new_practice_session_path(@practice), class: 'mn-btn mn-btn-primary' %>
+  </div>
+
 </div>
 
-<div>
-  <p> Go ahead and practice, Click the button when finished</p>
-</div>
 
-<%= link_to "Rate Rehearsal", new_practice_session_path(@practice), class: "mn-btn-primary mn-btn-lrg"%>
+
