@@ -22,12 +22,12 @@
 }
 
 .song-list input[type=radio]:checked + label {
-
   background-color: $primary;
 }
 
 .song-list {
-  overflow-y: auto;
+  overflow: scroll;
+  height: 100vh;
 }
 
 .item-radio {
@@ -35,7 +35,7 @@
 }
 
  .active{
-    border-bottom: 5px solid black;
+    border-right: 5px solid $primary;
   }
 
 .song-item {
