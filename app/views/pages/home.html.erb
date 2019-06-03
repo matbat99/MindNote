@@ -5,7 +5,13 @@
 <div class="practice-queue">
   <% @songs_due.each_with_index do |practice, id| %>
     <% unless id == 0 %>
-      <div class="song-item">
+    <% if practice.importance >= 10 %>
+      <div class="song-item importance-border-red">
+    <% elsif practice.importance >= 5 %>
+      <div class="song-item importance-border-orange">
+    <% else %>
+      <div class="song-item importance-border-yellow">
+    <% end %>
         <%= image_tag practice.song.album_url, alt: practice.song.title %>
         <div class="song-item-info">
           <h2><%= practice.song.title %></h2>
