@@ -32,12 +32,12 @@
 
 .timer {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 10px;
+  left: 10px;
 }
 
 .timer, .reset {
-  float:left;
+  float: left;
   width: 40%;
   padding: 2px 2px;
   font-size: $header-font-size-2;

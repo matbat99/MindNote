@@ -14,3 +14,17 @@ $headers-font: 'Ubuntu', sans-serif;
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
+
+
+.boldify {
+  font-weight: 900 !important;
+}
+
+.muted-text {
+    opacity: .8 !important;
+}
+
+.title-space {
+  text-transform: capitalize;
+  letter-spacing: 2px;
+}
