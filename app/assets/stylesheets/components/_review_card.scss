@@ -60,6 +60,13 @@
 
 .review-songs {
   margin-bottom: 80px;
+  margin-top: 25px;
+
+  .page-title {
+    color: #6D6D6D;
+    margin-bottom: 25px;
+    font-size: $header-font-size-1;
+  }
   h1 {
     color: white;
     font-size: 45px;

@@ -1,8 +1,8 @@
 
 <%= render 'shared/navbar' %>
 
-<h1 class="center-30 header-1">My Library</h1>
 <div class="review-songs">
+  <h1 class="page-title">Library</h1>
   <% @practices.each do |practice| %>
     <% if practice.active? %>
       <div class="song-item active">

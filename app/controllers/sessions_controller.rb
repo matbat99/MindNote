@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
         day = "on #{(DateTime.now + practice.interval).strftime('%A, %b %d')}"
       end
 
-      flash.notice = "You rehearsed #{practice.song.title} and rated it #{practice.sessions.last.grade} stars. See you #{day}"
+      flash.notice = "You will see this song again #{day}"
       redirect_to :root
     else
       render practice # don't know if this works
