@@ -1,4 +1,10 @@
-#new_note{
-  color: red;
-  display: inline;
+.note-card-content{
+  height: 100%;
+  width: 100%;
+  padding: 29px 26px;
+  margin: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  text-align: left;
 }
