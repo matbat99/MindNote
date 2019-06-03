@@ -1,4 +1,9 @@
 class NotesController < ApplicationController
+  def index
+    @practice = Practice.find(params[:practice_id])
+    @notes = @practice.notes
+  end
+
   def create
     @practice = Practice.find(params[:practice_id])
     @note = Note.new(note_params)

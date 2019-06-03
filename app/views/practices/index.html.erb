@@ -11,6 +11,10 @@
         <h2><%= practice.song.title %></h2>
         <p><%= practice.song.artist.name %></p>
       </div>
+       <div class="relative flex-end btn-notes">
+        <%= link_to "", practice_notes_path(practice), class: "link" %>
+        <i class="far fa-clipboard"></i>
+      </div>
       <div class="trash">
         <div class="relative">
       <%= link_to "", practice_path(practice), method: :delete, data: { confirm: 'Are you sure?' }, class: "link" %>

@@ -1,0 +1,14 @@
+<%= render 'shared/navbar' %>
+
+<h1 class="center-30 header-1"> My Notes</h1>
+  <% if @notes.empty? %>
+    <h1>You have no notes for this song</h1>
+  <% else %>
+    <div class="review-songs">
+      <% @notes.each do |note| %>
+        <div class="song-item">
+          <%= note.content %>
+        </div>
+    <% end %>
+    </div>
+  <% end %>
