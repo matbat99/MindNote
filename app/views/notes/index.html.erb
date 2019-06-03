@@ -1,6 +1,6 @@
 <%= render 'shared/navbar' %>
 
-<h1 class="center-30 header-1"> My Notes</h1>
+<h1 class="center-30 header-1"><%= @practice.song.title %> Notes</h1>
   <% if @notes.empty? %>
     <h1>You have no notes for this song</h1>
   <% else %>
