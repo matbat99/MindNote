@@ -11,7 +11,7 @@
             <input type="hidden" name="practice_id" value='<%= practice.id %>'>
             <input type="radio" style="display: none" name="radios" id="choice">
             <h2 class="boldify"><%= practice.song.title %></h2>
-            <p class="mute-text"><%= practice.song.artist.name %></p>
+            <p class="muted-text"><%= practice.song.artist.name %></p>
           </div>
           <%= link_to "", practice, class: "song-item-link" %>
         </div>
