@@ -6,7 +6,8 @@
   <% else %>
     <div class="review-songs">
       <% @notes.each do |note| %>
-        <div class="song-item">
+        <div class="song-item relative">
+          <%= link_to "", practice_note_path(@practice, note), class: "link" %>
           <p class="note-card-content"><%= note.content %></p>
         </div>
     <% end %>
