@@ -21,8 +21,18 @@
   }
 }
 
+.new_song {
+  height: 420px;
+}
+
 .song-list input[type=radio]:checked + label {
-  background-color: $primary;
+  border-right: 10px solid $primary;
+}
+
+.page-body input[type=submit] {
+  width: 80%;
+  margin: 20px auto 0;
+  display: block;
 }
 
 .item-radio {
@@ -34,5 +44,5 @@
   }
 
 .page-body {
-  height:430px;
+  padding: 10px;
 }
