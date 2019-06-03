@@ -1,29 +1,14 @@
 
 <%= render 'shared/navbar' %>
 
-<h1 class="center-30 header-1"> My library</h1>
+<h1 class="center-30 header-1">My Library</h1>
 <div class="review-songs">
   <% @practices.each do |practice| %>
     <% if practice.active? %>
       <div class="song-item active">
-      <%= image_tag practice.song.album_url, alt: practice.song.title %>
-      <div class="song-item-info">
-        <h2><%= practice.song.title %></h2>
-        <p><%= practice.song.artist.name %></p>
-      </div>
-      <div class="trash">
-        <div class="relative">
-      <%= link_to "", practice_path(practice), method: :delete, data: { confirm: 'Are you sure?' }, class: "link" %>
-        <i class="fas fa-trash-alt"></i>
-        </div>
-        <div class="relative">
-      <%= link_to "", statistics_practice_path(practice), class: "link" %>
-        <i class="fas fa-chart-line"></i>
-        </div>
-      </div>
-    </div>
     <% else %>
        <div class="song-item">
+    <% end %>
       <%= image_tag practice.song.album_url, alt: practice.song.title %>
       <div class="song-item-info">
         <h2><%= practice.song.title %></h2>
@@ -40,6 +25,6 @@
         </div>
       </div>
     </div>
-    <% end %>
   <% end %>
 </div>
+<%= link_to "+", new_song_path, class: "mn-btn-circle botom-right-corner"  %>

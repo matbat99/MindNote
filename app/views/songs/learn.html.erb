@@ -3,7 +3,7 @@
 
 <div class="container">
   <h3>Pick a song to learn</h3>
-  <div class="song-list">
+    <div class="song-list">
       <% @unlearned.each do |practice| %>
         <div class="song-item">
           <img src="<%= practice.song.album_url %>" alt="<%= practice.song.title %>">
@@ -18,3 +18,4 @@
       <% end %>
   </div>
 </div>
+<%= link_to "+", new_song_path, class: "mn-btn-circle botom-right-corner"  %>
