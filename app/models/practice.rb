@@ -1,6 +1,7 @@
 class Practice < ApplicationRecord
   belongs_to :user
   has_many :sessions
+  has_many :notes
   belongs_to :song
   validates :song, uniqueness: { scope: :user_id, message: "You have already added this song" }
 
