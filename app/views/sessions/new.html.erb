@@ -8,15 +8,15 @@
   <h1>Rate Your Rehearsal!</h1>
   <%= form_for([@practice, @session]) do |f| %>
     <div class="star-row">
-      <%= radio_button_tag(:star, "5", required: "required") %>
+      <%= radio_button_tag(:star, "5") %>
       <%= label_tag(:star_5, "") %>
-      <%= radio_button_tag(:star, "4", required: "required") %>
+      <%= radio_button_tag(:star, "4") %>
       <%= label_tag(:star_4, "") %>
-      <%= radio_button_tag(:star, "3", required: "required") %>
+      <%= radio_button_tag(:star, "3") %>
       <%= label_tag(:star_3, "") %>
-      <%= radio_button_tag(:star, "2", required: "required") %>
+      <%= radio_button_tag(:star, "2") %>
       <%= label_tag(:star_2, "") %>
-      <%= radio_button_tag(:star, "1", required: "required") %>
+      <%= radio_button_tag(:star, "1") %>
       <%= label_tag(:star_1, "") %>
     </div>
     <%= f.submit "Finish Rehearsal", class: "mn-btn-lrg mn-btn-primary" %>
