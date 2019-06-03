@@ -1,8 +1,8 @@
 <%= render 'shared/navbar' %>
 <%#= image_tag asset_path("mind-note-colored") %>
 <%= render "practice_card", practice: @first  %>
-<h3>Practice Queue</h3>
 <div class="practice-queue">
+  <h3>Practice Queue</h3>
   <% @songs_due.each_with_index do |practice, id| %>
     <% unless id == 0 %>
     <% if practice.importance >= 10 %>
@@ -14,8 +14,8 @@
     <% end %>
         <%= image_tag practice.song.album_url, alt: practice.song.title %>
         <div class="song-item-info">
-          <h2><%= practice.song.title %></h2>
-          <p><%= practice.song.artist.name %></p>
+          <h2 class="boldify"><%= practice.song.title %></h2>
+          <p class="mute-text"><%= practice.song.artist.name %></p>
         </div>
         <%= link_to "", practice_path(practice.id), class: "song-item-link"  %>
       </div>

@@ -25,11 +25,6 @@
   background-color: $primary;
 }
 
-.song-list {
-  overflow: scroll;
-  height: 76vh;
-}
-
 .item-radio {
   display: flex;
 }
@@ -38,108 +33,6 @@
     border-right: 5px solid $primary;
   }
 
-.song-item {
-  display: flex;
-  background-color: #F3F3F3;
-  transition: background-color .2s ease;
-  width: 100%;
-  height: 85px;
-  margin: 6px 0 !important;
-  border-radius: 3px;
-  box-shadow: 0px 0px 9px rgba(20, 20, 20, 0.25);
-  align-items: center;
-  position: relative;
-  margin-bottom: 8px;
-
-
-  .song-item-info {
-    width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    margin-top: 15px;
-    margin-left: 10px;
-    color: #6D6D6D;
-    text-align: left;
-    flex-grow: 1;
-    margin: 0;
-    height: 100%;
-    padding: 15px 22px;
-  }
-
-  img {
-    height: 65px;
-    min-width: 65px;
-    margin: 5px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.31);
-  }
-
-  h2 {
-    font-size: $header-font-size-2;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-  }
-}
-
-.song-item-link {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-}
-
-
-.learn-bar {
-  position: relative;
-  margin-top: 15px;
-  background-color: white;
-  color: $gray;
-  padding: 10px;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.07);
-  border-radius: 3px;
-  h1 {
-    color: $gray;
-    font-size: $header-font-size-2;
-    margin: 0px 15px 14px 10px;
-    text-align: left;
-  }
-
-  p {
-    font-size: $body-font-size-1;
-    text-align: right;
-    margin: 0;
-    margin: 15px 15px 7px 15px;
-  }
-
-  .learn-bar-albums {
-    display: flex;
-    justify-content: space-around;
-    img {
-      width: 65px;
-      height: 65px;
-      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.31);
-    }
-  }
-}
-
-.page-body{
+.page-body {
   height:430px;
-}
-
-.scroll-list{
-  height: 500px;
-  overflow: scroll;
-}
-
-
-.importance-border-red {
-  border-right: 3px solid rgb(221, 17, 17);
-}
-.importance-border-orange {
-  border-right: 3px solid rgb(219, 100, 14);
-}
-.importance-border-yellow {
-  border-right: 3px solid rgb(232, 236, 26);
 }

@@ -4,11 +4,11 @@
   </div>
 <% else %>
   <div class="practice-card" style="background-image: linear-gradient(208.57deg, rgba(0, 0, 0, 0.5 ), rgba(0, 0, 0, 0.8)), url('<%= practice.song.album_url %>')">
-    <h3 class="text-left">Up next to practice:</h3>
+    <h3 class="title-space muted-text">Up next to practice:</h3>
     <div class="details">
-      <h1><%= practice.song.title %></h1>
-      <h3><%= practice.song.artist.name %></h3>
+      <h1 class="boldify"><%= practice.song.title %></h1>
+      <h3 class="muted-text"><%= practice.song.artist.name %></h3>
     </div>
-    <%= link_to "Practice", practice_path(practice.id), class: "mn-btn mn-btn-primary"  %>
+    <%= link_to "Practice", practice_path(practice.id), class: "practice-btn"  %>
   </div>
 <% end %>

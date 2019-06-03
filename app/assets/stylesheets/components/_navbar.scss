@@ -1,7 +1,15 @@
+.nav-container {
+  height: 68px;
+}
+
 .mn-navbar {
-  padding-bottom: 7px;
-  margin-bottom: 7px;
+  z-index: 100;
+  background-color: $light-gray;
+  padding: 7px;
   display: flex;
+  position: fixed;
+  width: 100%;
+  top: 0;
   justify-content: space-between;
   align-items: center;
   border-bottom: 4px solid $secondary;

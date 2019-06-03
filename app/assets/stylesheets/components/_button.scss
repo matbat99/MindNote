@@ -73,7 +73,7 @@
 }
 
 .botom-right-corner{
-  position: absolute;
+  position: fixed;
   bottom: 15px;
   right: 15px;
 }
@@ -135,6 +135,14 @@
   margin: 20px 5px;
 }
 
+.practice-btn {
+  color: white;
+  padding: 5px;
+  background-color: rgba(255, 255, 255, .3);
+  border-radius: 25px;
+  border: 2px solid white;
+  font-size: $header-font-size-1;
+}
 
 .add-song{
   font-size: $header-font-size-1;
@@ -145,3 +153,4 @@
   padding-top: 20px;
 
 }
+

@@ -2,11 +2,8 @@
 
 
 .mobile-container {
-  padding: 10px;
-  background-color: $light-gray;
   margin: 0 auto;
   text-align: center;
-  height: 100vh;
   position: relative;
 }
 
@@ -20,7 +17,7 @@ body a {
 
 
 body {
-  background-color: #CECECE;
+  background-color: $light-gray;;
   h1 {
     font-size: $header-font-size-1;
   }

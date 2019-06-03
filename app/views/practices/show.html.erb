@@ -1,14 +1,8 @@
-
-
 <%= render 'shared/navbar' %>
 
-
-
-
-
-
 <div class="song-card" style="background-image: linear-gradient(208.57deg, rgba(0, 0, 0, 0.5 ), rgba(0, 0, 0, 0.8)), url('<%= @practice.song.album_url %>')">
-  <div class="timer">Begin Practice</div>
+  <div class="timer"><h3>Begin Practice</h3></div>
+
   <div class="song-card-info">
     <h3><%= @practice.song.title %></h3>
     <p><%= @practice.song.artist.name %></p>
@@ -21,9 +15,8 @@
   </div>
 
   <div class="resetTimer">
-    <%= link_to "END", new_practice_session_path(@practice), class: 'mn-btn mn-btn-primary' %>
+    <%= link_to "End Practice", new_practice_session_path(@practice), class: 'mn-btn-lrg mn-btn-primary' %>
   </div>
-
 </div>
 
 <%= form_for ([@practice,@note]) do |f| %>
@@ -32,4 +25,3 @@
     <%= f.submit "Done", class: "mn-btn mn-btn-primary center" %>
   </div>
 <% end %>
-

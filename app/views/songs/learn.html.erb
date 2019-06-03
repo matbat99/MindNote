@@ -2,16 +2,16 @@
 
 
 <div class="container">
-  <h1>Pick a song to learn</h1>
     <div class="song-list">
+      <h1>Pick a song to learn</h1>
       <% @unlearned.each do |practice| %>
         <div class="song-item">
           <img src="<%= practice.song.album_url %>" alt="<%= practice.song.title %>">
           <div class="song-item-info">
             <input type="hidden" name="practice_id" value='<%= practice.id %>'>
             <input type="radio" style="display: none" name="radios" id="choice">
-            <h2><%= practice.song.title %></h2>
-            <p><%= practice.song.artist.name %></p>
+            <h2 class="boldify"><%= practice.song.title %></h2>
+            <p class="mute-text"><%= practice.song.artist.name %></p>
           </div>
           <%= link_to "", practice, class: "song-item-link" %>
         </div>
