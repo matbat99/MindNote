@@ -15,7 +15,7 @@
         <%= image_tag practice.song.album_url, alt: practice.song.title %>
         <div class="song-item-info">
           <h2 class="boldify"><%= practice.song.title %></h2>
-          <p class="mute-text"><%= practice.song.artist.name %></p>
+          <p class="muted-text"><%= practice.song.artist.name %></p>
         </div>
         <%= link_to "", practice_path(practice.id), class: "song-item-link"  %>
       </div>
@@ -24,7 +24,5 @@
   <%= link_to "Learn a new song", learn_path, class: "mn-btn-lrg mn-btn-secondary end-btn"  %>
   <div class="add-song relative">
     <%= link_to "", new_song_path, class: "link" %>
-    <h2 class="mn-btn-lrg mn-btn-primary" >Add to library</h2>
   </div>
 </div>
-

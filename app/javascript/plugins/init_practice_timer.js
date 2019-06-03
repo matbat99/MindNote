@@ -60,11 +60,9 @@ function getShowTime(){
   hours = (hours < 10) ? "0" + hours : hours;
   minutes = (minutes < 10) ? "0" + minutes : minutes;
   seconds = (seconds < 10) ? "0" + seconds : seconds;
-  timerDisplay.innerHTML = hours + ':' + minutes + ':' + seconds;
+  timerDisplay.innerHTML = `<h3>${hours}:${minutes}:${seconds}</h3>`;
 }
 
 
 export {startTimer}
 export {endRehearse}
-
-
