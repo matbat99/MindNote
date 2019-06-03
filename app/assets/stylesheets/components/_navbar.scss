@@ -12,18 +12,12 @@
 }
 
 .mn-navbar {
-  padding-bottom: 15px;
-  margin-bottom: 15px;
+  padding-bottom: 7px;
+  margin-bottom: 7px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: 4px solid $secondary;
-
-  i {
-    font-size: $header-font-size-1;
-    color: $secondary;
-    padding: 9px 7px 0 0;
-  }
 }
 
 
