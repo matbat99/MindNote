@@ -21,6 +21,13 @@ body a {
 
 body {
   background-color: #CECECE;
+  h1 {
+    font-size: $header-font-size-1;
+  }
+
+  h3 {
+    font-size: $header-font-size-2;
+  }
 }
 
 ul.hmenu {
