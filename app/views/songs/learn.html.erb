@@ -2,7 +2,8 @@
 
 
 <div class="container">
-  <div class="review-songs">
+  <h3>Pick a song to learn</h3>
+    <div class="song-list">
       <% @unlearned.each do |practice| %>
         <div class="song-item">
           <img src="<%= practice.song.album_url %>" alt="<%= practice.song.title %>">
