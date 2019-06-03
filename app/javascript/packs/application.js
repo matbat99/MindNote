@@ -8,6 +8,7 @@ import { endRehearse} from '../plugins/init_practice_timer'
 
 
 const searchBox = document.querySelector("#song-search");
+const searchBoxText = document.querySelector('#song-search .query');
 
 if(searchBox) {
 searchBox.addEventListener('keyup', (event) => {
@@ -15,6 +16,11 @@ searchBox.addEventListener('keyup', (event) => {
   searchItunes();
 });
 };
+
+searchBoxText.addEventListener('click', (event) => {
+  console.log(event);
+  searchBoxText.placeholder= "";
+});
 
 alertClose();
 
