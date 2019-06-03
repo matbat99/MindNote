@@ -16,6 +16,10 @@ class NotesController < ApplicationController
     redirect_to practice_path(@practice)
   end
 
+  def show
+    @note = Note.find(params[:id])
+  end
+
   private
 
   def note_params
