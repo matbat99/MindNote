@@ -6,7 +6,7 @@ class PracticesController < ApplicationController
   end
 
   def show
-
+    @note = Note.new
   end
 
   def destroy

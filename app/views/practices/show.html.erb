@@ -21,3 +21,12 @@
 </div>
 
 <%= link_to "Rate Rehearsal", new_practice_session_path(@practice), class: "mn-btn-primary mn-btn-lrg"%>
+
+
+
+<%= form_for ([@practice,@note]) do |f| %>
+  <div class="hey">
+    <%= f.text_area :content %>
+    <%= f.submit "Done", class: "mn-btn mn-btn-primary" %>
+  </div>
+<% end %>
