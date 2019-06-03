@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   resources :practices, only: [:index, :show, :destroy] do
     resources :sessions, only: [:new, :create]
-    resources :notes, only: [:create, :index]
+    resources :notes, only: [:create, :index, :show]
     collection do
       get "review"
     end
