@@ -1,4 +1,24 @@
-<div class="mn-navbar">
+<nav role="navigation" class="mn-navbar">
+  <div id="menuToggle">
+    <input type="checkbox" />
+    <span></span>
+    <span></span>
+    <span></span>
+    <ul id="menu">
+      <%= link_to root_path, class: "dropdown-item" do %>
+        <li>Home</li>
+      <% end %>
+      <%= link_to progress_practices_path, class: "dropdown-item" do %>
+        <li>My Statistics</li>
+      <% end %>
+      <%= link_to practices_path, class: "dropdown-item" do %>
+        <li>My Library</li>
+      <% end %>
+      <%= link_to destroy_user_session_path, method: :delete, class: "dropdown-item" do %>
+        <li>Log Out</li>
+      <% end %>
+    </ul>
+  </div>
   <div class="mn-avatar">
     <div class="avatar-info">
       <% if current_user.photo %>
@@ -10,17 +30,4 @@
     </div>
     <%= image_tag asset_path("mn-logo"), class: "avatar-logo" %>
   </div>
-  <div class="second">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item dropdown">
-        <button id='navbarDropdown' class="mn-menu-btn" type="button" name="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-v"></i></button>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <%= link_to "Home", root_path, class: "dropdown-item" %>
-          <%= link_to "My Statistics", progress_practices_path, class: "dropdown-item" %>
-          <%= link_to "My Songs", practices_path, class: "dropdown-item" %>
-          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-        </div>
-      </li>
-    </ul>
-  </div>
-</div>
+</nav>
