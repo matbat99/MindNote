@@ -8,11 +8,14 @@
       <%= link_to root_path, class: "dropdown-item" do %>
         <li>Home</li>
       <% end %>
-      <%= link_to progress_practices_path, class: "dropdown-item" do %>
-        <li>My Statistics</li>
+      <%= link_to learn_path, class: "dropdown-item" do %>
+        <li>Learn a song</li>
       <% end %>
       <%= link_to practices_path, class: "dropdown-item" do %>
         <li>My Library</li>
+      <% end %>
+      <%= link_to progress_practices_path, class: "dropdown-item" do %>
+      <li>My Statistics</li>
       <% end %>
       <%= link_to destroy_user_session_path, method: :delete, class: "dropdown-item" do %>
         <li>Log Out</li>

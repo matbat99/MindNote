@@ -1,7 +1,7 @@
 
 <%= render 'shared/navbar' %>
 
-<h1 class="center-30 header-1"> My library</h1>
+<h1 class="center-30 header-1">My Library</h1>
 <div class="review-songs">
   <% @practices.each do |practice| %>
     <% if practice.active? %>
@@ -28,6 +28,7 @@
     </div>
     <% else %>
        <div class="song-item">
+    <% end %>
       <%= image_tag practice.song.album_url, alt: practice.song.title %>
       <div class="song-item-info">
         <h2><%= practice.song.title %></h2>
@@ -44,6 +45,6 @@
         </div>
       </div>
     </div>
-    <% end %>
   <% end %>
 </div>
+<%= link_to "+", new_song_path, class: "mn-btn-circle botom-right-corner"  %>
