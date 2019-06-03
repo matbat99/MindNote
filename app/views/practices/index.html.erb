@@ -26,9 +26,9 @@
         </div>
       </div>
     </div>
+
     <% else %>
        <div class="song-item">
-    <% end %>
       <%= image_tag practice.song.album_url, alt: practice.song.title %>
       <div class="song-item-info">
         <h2><%= practice.song.title %></h2>
@@ -45,6 +45,7 @@
         </div>
       </div>
     </div>
+  <% end %>
   <% end %>
 </div>
 <%= link_to "+", new_song_path, class: "mn-btn-circle botom-right-corner"  %>
