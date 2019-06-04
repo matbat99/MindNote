@@ -1,6 +1,9 @@
 <% unless practice %>
   <div class="practice-card sad">
-    <h1>Select a song to learn!</h1>
+    <div class="message">
+      <h1>Nothing is due today</h1>
+      <h3>Select a song to learn!</h3>
+  </div>
   </div>
 <% else %>
   <div class="practice-card" style="background-image: linear-gradient(208.57deg, rgba(0, 0, 0, 0.5 ), rgba(0, 0, 0, 0.8)), url('<%= practice.song.album_url %>')">
