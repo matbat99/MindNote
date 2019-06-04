@@ -31,7 +31,11 @@ class PracticesController < ApplicationController
     @last_session = @user_total_sessions.max_by {|session| session.created_at }
     grade_sum = 0
     @user_total_sessions.each { |session| grade_sum += session.grade }
-    @average_grade = grade_sum / @user_total_sessions.count
+    if @user_total_sessions.count > 0
+      @average_grade = grade_sum / @user_total_sessions.count
+    else
+      @average_grade = 1
+    end
     @number_of_total_sessions = 0
     @practices.each { |practice| @number_of_total_sessions += practice.sessions.count }
   end
