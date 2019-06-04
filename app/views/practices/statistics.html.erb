@@ -12,19 +12,34 @@
   <p class="text-center">You haven't rehearsed this song yet!</p>
 <% else %>
   <% average = averages.sum / averages.length %>
-  <div class="stat stat-rehersl">
-    <div class="stat-info">
-      <h3 class="numb"><%= @practice.sessions.count %></h3>
-      <h3 class="quality">Rehearsals</h3>
+  <div class="slider">
+    <div>
+      <div class="stat stat-rehersl">
+        <div class="stat-info">
+          <h3 class="numb"><%= @practice.sessions.count %></h3>
+          <h3 class="quality">Rehearsals</h3>
+        </div>
+        <i class="fas fa-guitar"></i>
+      </div>
     </div>
-    <i class="fas fa-guitar"></i>
-  </div>
-  <div class="stat stat-rating">
-    <div class="stat-info">
-      <h3 class="numb"><%= average  %></h3>
-      <h3 class="mb-3 quality"> Rating </h3>
+    <div>
+      <div class="stat stat-rating">
+        <div class="stat-info">
+          <h3 class="numb"><%= average  %></h3>
+          <h3 class="mb-3 quality"> Rating </h3>
+        </div>
+        <i class="fas fa-star"></i>
+      </div>
     </div>
-    <i class="fas fa-star"></i>
+    <div>
+      <div class="stat stat-since">
+      <i class="fas fa-calendar-day"></i>
+      <div class="stat-info">
+        <h3 class="text-center quality">Since </h3>
+        <h3><%= @practice.sessions.first.created_at.strftime("%A, %b %d") %></h3>
+      </div>
+    </div>
+    </div>
   </div>
 <% end %>
 
@@ -32,14 +47,8 @@
   <h1 class="mn-btn linear-bg center relative">Start rehearsal
     <%= link_to "", practice_path(@practice.id), class: "link" %>
   </h1>
-<% else %>
- <div class="stat stat-since">
-    <i class="fas fa-calendar-day"></i>
-    <div class="stat-info">
-      <h3 class="text-center quality">Since </h3>
-      <h3><%= @practice.sessions.first.created_at.strftime("%A, %b %d") %></h3>
-   </div>
- </div>
 <% end %>
+
+
 
 
