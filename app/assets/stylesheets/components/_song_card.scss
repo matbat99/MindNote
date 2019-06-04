@@ -4,12 +4,13 @@
   flex-direction: column;
   height: 50vh;
   padding: 15px;
-  justify-content: space-between;
   align-items: center;
   box-shadow: 0 0 15px rgba(0, 0, 0, .4);
   color: white;
   margin-bottom: 25px;
+
   .song-card-info{
+    padding-top: 60px;
     h3  {
       font-size: $main-font-size-1;
     }

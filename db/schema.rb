@@ -48,7 +48,6 @@ ActiveRecord::Schema.define(version: 2019_06_03_093519) do
     t.integer "grade"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "comment"
     t.integer "time"
     t.index ["practice_id"], name: "index_sessions_on_practice_id"
   end
