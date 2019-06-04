@@ -1,0 +1,16 @@
+.scroll-list {
+  margin: 9px auto;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.stat-card {
+  width: 45%;
+  margin: 2px 5px;
+  color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-position: center;
+}
