@@ -48,6 +48,7 @@ function endRehearse(){
 }
 
 function getShowTime(){
+  let timeStore = document.querySelector('#time')
   updatedTime = new Date().getTime();
   if (savedTime){
     difference = (updatedTime - startTime) + savedTime;
@@ -61,6 +62,7 @@ function getShowTime(){
   minutes = (minutes < 10) ? "0" + minutes : minutes;
   seconds = (seconds < 10) ? "0" + seconds : seconds;
   timerDisplay.innerHTML = `<h3>${hours}:${minutes}:${seconds}</h3>`;
+  timeStore.value = difference
 }
 
 
