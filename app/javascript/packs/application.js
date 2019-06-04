@@ -4,60 +4,25 @@ import { alertClose } from '../plugins/alert_close.js';
 
 import { startTimer} from '../plugins/init_practice_timer'
 import { endRehearse} from '../plugins/init_practice_timer'
-
-
+import { addDropDownMenus} from '../plugins/init_drop_down_menus'
 
 const searchBox = document.querySelector("#song-search");
 const searchBoxText = document.querySelector('#song-search .query');
 const noteContent = document.querySelector('.form-practice-show-container #note_content');
-const drops = document.querySelectorAll('.dropdown-song');
-const dropMenus = document.querySelectorAll('.dropdown-song-content')
+var drops = document.querySelectorAll('.dropdown-song');
+
 
 if(searchBox) {
-searchBox.addEventListener('keyup', (event) => {
-  event.preventDefault();
-  searchItunes();
-});
-};
-
-if(searchBoxText) {
-  searchBoxText.addEventListener('click', (event) => {
-    searchBoxText.placeholder= "";
+  searchBox.addEventListener('keyup', (event) => {
+    event.preventDefault();
+    searchItunes();
   });
-};
+  };
 
-if(noteContent) {
-  noteContent.addEventListener('click', (event) => {
-    noteContent.placeholder= "";
-  });
-};
 
-if (dropMenus){
-  let counter = 1;
-  dropMenus.forEach((dropmenu) => {
-    dropmenu.id = `dm-${counter}`;
-    counter = counter + 1;
-  });
-};
-
-if(drops){
-  let counter = 1;
-  drops.forEach((drop) => {
-    drop.id = `drop${counter}`;
-    console.log(drop.id)
-    let menuID = `dm-${counter}`
-    let dropMenu = document.getElementById(menuID);
-    console.log(dropMenu);
-    drop.addEventListener('click', (event) => {
-      console.log(counter);
-      dropMenu.classList.toggle("show");
-    });
-    counter = counter + 1;
-  });
+if(drops) {
+  addDropDownMenus();
 }
-
-
-
 
 
 alertClose();
