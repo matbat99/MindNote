@@ -18,12 +18,28 @@
 
 </div>
 
-<%= form_for ([@practice,@note]) do |f| %>
-  <div class="form-practice-show-container">
-    <%= f.text_area :content, placeholder: "make a note" %>
-    <%= f.submit "Done", class: "mn-btn mn-btn-primary center" %>
+<%= form_for ([@practice, @note]) do |f| %>
+  <div class="form-practice-show-container d-flex justify-content-around">
+    <div class="d-flex">
+      <%= f.text_area :content, placeholder: "Add a MindNote", class: "tl-bl-border-radius" %>
+      <%= f.submit "Add", class: "mn-btn mn-btn-form mn-btn-primary" %>
+    </div>
   </div>
 <% end %>
+
+<div class="note-list">
+  <h3>Past MindNotes</h3>
+  <ul>
+    <% @practice.notes.each do |note| %>
+    <li>
+      <div class="note-card">
+        <p><%= note.created_at.strftime('%A, %b %d') %></p>
+        <h3><%= note.content %></h3>
+      </div>
+    </li>
+    <% end %>
+  </ul>
+</div>
 
 
 <div class="resetTimer">
