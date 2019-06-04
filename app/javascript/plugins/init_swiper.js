@@ -11,8 +11,6 @@ const swipeMe = () => {
       spaceBetween: 100
   });
 
-  console.log(mySwiper);
-  console.log(mySwiper.slides)
 }
 // var mySwiper = document.querySelector('.swiper-container').swiper
 

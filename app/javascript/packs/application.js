@@ -29,13 +29,9 @@ if(drops) {
   addDropDownMenus();
 }
 
-// if(mySwiper) {
-//   console.log(swiper)
-//   mySwiper.swiper.clickedSlide();
-// }
 
 swipeMe();
-// mySwiper.slideNext();
+
 
 
 alertClose();
