@@ -14,14 +14,17 @@
       <div class="dropdown-song">
         <p class="dropbtn-song">...</p>
         <div id="myDropdown" class="dropdown-song-content">
-          <div>
-            <a href="#">Link 1</a>
+          <div class="relative">
+            <%= link_to "", statistics_practice_path(practice), class: "link"  %>
+            <p>Stats</p>
           </div>
-          <div>
-            <a href="#">Link 2</a>
+          <div class="relative">
+            <%= link_to "", practice_notes_path(practice), class: "link"  %>
+            <p>Notes</p>
           </div>
-          <div>
-            <a href="#">Link 3</a>
+          <div class="relative">
+            <%= link_to "", practice_path(practice), method: :delete, class: "link"  %>
+            <p>Delete</p>
           </div>
         </div>
       </div>

@@ -14,6 +14,7 @@ class PracticesController < ApplicationController
     message_holder = @practice.song.title
     @sessions = @practice.sessions
     @sessions.each { |session| session.destroy }
+    @practice.notes.each { |note| note.destroy }
     @practice.destroy
     flash.notice = "#{message_holder} removed from your list"
     redirect_to practices_path
