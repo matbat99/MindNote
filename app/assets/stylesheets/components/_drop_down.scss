@@ -1,23 +1,24 @@
-
-.dropdown {
+.dropdown-song{
   position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-library{
+  display: block;
   height: 100%;
-  button{
-    font-size: 15px;
-    height: 100%;
+  padding: 9px 20px;
+  font-size: 22px;
+}
+
+
+.dropdown-song-content{
+  position: absolute;
+  display: none;
+  height: 100%;
+  z-index: 1;
+  background-color: white;
+  border: 1px solid black;
+  a{
+    font-size: 10px;
   }
 }
 
+.show{
+  display: block;
+}
