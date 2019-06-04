@@ -14,15 +14,15 @@
   <% average = averages.sum / averages.length %>
   <div class="stat stat-rehersl">
     <div class="stat-info">
-      <h3><%= @practice.sessions.count %></h3>
-      <h3>Rehearsals</h3>
+      <h3 class="numb"><%= @practice.sessions.count %></h3>
+      <h3 class="quality">Rehearsals</h3>
     </div>
     <i class="fas fa-guitar"></i>
   </div>
   <div class="stat stat-rating">
     <div class="stat-info">
-      <h3><%= average  %></h3>
-      <h3 class="mb-3"> Rating </h3>
+      <h3 class="numb"><%= average  %></h3>
+      <h3 class="mb-3 quality"> Rating </h3>
     </div>
     <i class="fas fa-star"></i>
   </div>
@@ -36,7 +36,7 @@
  <div class="stat stat-since">
     <i class="fas fa-calendar-day"></i>
     <div class="stat-info">
-      <h3 class="text-center">Since </h3>
+      <h3 class="text-center quality">Since </h3>
       <h3><%= @practice.sessions.first.created_at.strftime("%A, %b %d") %></h3>
    </div>
  </div>
