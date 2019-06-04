@@ -8,7 +8,10 @@ const swipeMe = () => {
 
   const mySwiper = new Swiper('.swiper-container', {
       speed: 400,
-      spaceBetween: 100
+      spaceBetween: 100,
+      autoplay: {
+        delay: 5000,
+      },
   });
 
 }
