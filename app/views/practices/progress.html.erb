@@ -1,43 +1,79 @@
-<%= render 'shared/navbar' %>
-
-
-<div class="scroll-list">
-  <div class="stat-card center" style="background-image: linear-gradient(208.57deg, rgba(0, 0, 0, 0.5 ), rgba(0, 0, 0, 0.8)), url(<%= asset_path('music6.jpg')%>)">
-
-    <h2>Joined</h2>
-    <p><%= current_user.created_at.strftime("%A, %b %d") %></p>
-  </div>
-
-
-  <div class="stat-card center" id="slide-1" style="background-image: linear-gradient(208.57deg, rgba(0, 0, 0, 0.5 ), rgba(0, 0, 0, 0.8)), url(<%= asset_path('music1.jpg')%>)">
-
-    <h2> Songs practiced</h2>
-    <p><%= (@practices.select { |practice| practice.sessions.count > 0 }).count  %></p>
-  </div>
-
-  <div class="stat-card center" id="slide-2" style="background-image: linear-gradient(208.57deg, rgba(0, 0, 0, 0.5 ), rgba(0, 0, 0, 0.8)), url(<%= asset_path('music2.jpg')%>)">
-
-    <h2>Repertoire</h2>
-    <p><%= @practices.count %> songs</p>
-  </div>
-
-  <div class="stat-card center" id="slide-3" style="background-image: linear-gradient(208.57deg, rgba(0, 0, 0, 0.5 ), rgba(0, 0, 0, 0.8)), url(<%= asset_path('music3.jpg')%>)">
-
-    <p>Rehearsals</h2>
-    <p><%= @number_of_total_sessions %></p>
-  </div>
-
-  <div class="stat-card center" id="slide-4" style="background-image: linear-gradient(208.57deg, rgba(0, 0, 0, 0.5 ), rgba(0, 0, 0, 0.8)), url(<%= asset_path('music4.jpg')%>)">
-
-    <h2>Last Practice</h2>
-    <p><%= @last_session.created_at.strftime("%A, %b %d") %></p>
-  </div>
-
-  <div class="stat-card center" id="slide-5" style="background-image: linear-gradient(208.57deg, rgba(0, 0, 0, 0.5 ), rgba(0, 0, 0, 0.8)), url(<%= asset_path('music5.jpg')%>)">
-
-    <h2>Grade average</h2>
-    <p>Average rehearsal grade: <%= @average_grade %> </p>
-  </div>
+<div class="nav-container">
+  <nav role="navigation" class="mn-navbar nav-swiper-width-progress">
+    <div id="menuToggle">
+      <input type="checkbox" />
+      <span></span>
+      <span></span>
+      <span></span>
+      <ul id="menu">
+        <%= link_to root_path, class: "dropdown-item" do %>
+        <li>Home</li>
+        <% end %>
+        <%= link_to learn_path, class: "dropdown-item" do %>
+        <li>Learn a song</li>
+        <% end %>
+        <%= link_to practices_path, class: "dropdown-item" do %>
+        <li>My Library</li>
+        <% end %>
+        <%= link_to progress_practices_path, class: "dropdown-item" do %>
+        <li>My Statistics</li>
+        <% end %>
+        <%= link_to destroy_user_session_path, method: :delete, class: "dropdown-item" do %>
+        <li>Log Out</li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="mn-avatar">
+      <div class="avatar-info">
+        <% if current_user.photo %>
+        <%= cl_image_tag current_user.photo, class: "profile-photo"%>
+        <% else %>
+        <img src="https://picsum.photos/200/200" alt="profile">
+        <% end %>
+        <h3><%= current_user.name %></h3>
+      </div>
+      <%= image_tag asset_path("mn-logo"), class: "avatar-logo" %>
+    </div>
+  </nav>
 </div>
 
+<div class="swiper-container">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+       <div class="stat-card center" style="background-image: linear-gradient(208.57deg, rgba(0, 0, 0, 0.5 ), rgba(0, 0, 0, 0.8)), url(<%= asset_path('music6.jpg')%>)">
+        <h2>Joined</h2>
+        <p><%= current_user.created_at.strftime("%A, %b %d") %></p>
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <div class="stat-card center" id="slide-1" style="background-image: linear-gradient(208.57deg, rgba(0, 0, 0, 0.5 ), rgba(0, 0, 0, 0.8)), url(<%= asset_path('music1.jpg')%>)">
+        <h2> Songs practiced</h2>
+        <p><%= (@practices.select { |practice| practice.sessions.count > 0 }).count  %></p>
+      </div>
+    </div>
+    <div class="swiper-slide">
+       <div class="stat-card center" id="slide-2" style="background-image: linear-gradient(208.57deg, rgba(0, 0, 0, 0.5 ), rgba(0, 0, 0, 0.8)), url(<%= asset_path('music2.jpg')%>)">
+        <h2>Repertoire</h2>
+        <p><%= @practices.count %> songs</p>
+      </div>
+    </div>
+    <div class="swiper-slide">
+        <div class="stat-card center" id="slide-3" style="background-image: linear-gradient(208.57deg, rgba(0, 0, 0, 0.5 ), rgba(0, 0, 0, 0.8)), url(<%= asset_path('music3.jpg')%>)">
+        <p>Rehearsals</h2>
+        <p><%= @number_of_total_sessions %></p>
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <div class="stat-card center" id="slide-4" style="background-image: linear-gradient(208.57deg, rgba(0, 0, 0, 0.5 ), rgba(0, 0, 0, 0.8)), url(<%= asset_path('music4.jpg')%>)">
+        <h2>Last Practice</h2>
+        <p><%= @last_session.created_at.strftime("%A, %b %d") %></p>
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <div class="stat-card center" id="slide-5" style="background-image: linear-gradient(208.57deg, rgba(0, 0, 0, 0.5 ), rgba(0, 0, 0, 0.8)), url(<%= asset_path('music5.jpg')%>)">
+        <h2>Grade average</h2>
+        <p>Average rehearsal grade: <%= @average_grade %> </p>
+      </div>
+    </div>
+</div>
 
