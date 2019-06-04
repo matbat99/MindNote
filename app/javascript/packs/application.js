@@ -10,8 +10,8 @@ import { endRehearse} from '../plugins/init_practice_timer'
 const searchBox = document.querySelector("#song-search");
 const searchBoxText = document.querySelector('#song-search .query');
 const noteContent = document.querySelector('.form-practice-show-container #note_content');
-const dropDownSong = document.querySelector('.dropdown-song');
-const dropDownContent = document.querySelector('.dropdown-song-content')
+const drops = document.querySelectorAll('.dropdown-song');
+const dropMenus = document.querySelectorAll('.dropdown-song-content')
 
 if(searchBox) {
 searchBox.addEventListener('keyup', (event) => {
@@ -32,11 +32,32 @@ if(noteContent) {
   });
 };
 
-if(dropDownSong) {
-  dropDownSong.addEventListener('click',(event) => {
-    dropDownContent.classList.toggle("show");
+if (dropMenus){
+  let counter = 1;
+  dropMenus.forEach((dropmenu) => {
+    dropmenu.id = `dm-${counter}`;
+    counter = counter + 1;
   });
 };
+
+if(drops){
+  let counter = 1;
+  drops.forEach((drop) => {
+    drop.id = `drop${counter}`;
+    console.log(drop.id)
+    let menuID = `dm-${counter}`
+    let dropMenu = document.getElementById(menuID);
+    console.log(dropMenu);
+    drop.addEventListener('click', (event) => {
+      console.log(counter);
+      dropMenu.classList.toggle("show");
+    });
+    counter = counter + 1;
+  });
+}
+
+
+
 
 
 alertClose();
