@@ -1,0 +1,32 @@
+.playlist-card {
+  background-color: white;
+  padding: 10px;
+  margin: 10px auto;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, .4);
+  color: white;
+  height: 326px;
+  width: 326px;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  h2 {
+    transition: color .3s ease;
+  }
+}
+
+#playlists input[type=radio]:checked + .playlist-card {
+  h2 {
+    color: $primary;
+  }
+}
+
+.playlist-songs {
+
+  padding: 10px;
+  input[type=checkbox]:checked + .song-item {
+    border-right: 13px solid #80DA60;
+  }
+}

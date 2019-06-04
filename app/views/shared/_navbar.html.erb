@@ -21,6 +21,9 @@
         <%= link_to destroy_user_session_path, method: :delete, class: "dropdown-item" do %>
         <li>Log Out</li>
         <% end %>
+        <%= link_to "https://accounts.spotify.com/authorize?client_id=1e321e4cf1734fb88baf478fca5e6c4b&redirect_uri=http:%2F%2Flocalhost:3000%2Fplaylists&response_type=token", class: "dropdown-item" do %>
+        <li>Import Playlist</li>
+        <% end %>
       </ul>
     </div>
     <div class="mn-avatar">
