@@ -9,11 +9,17 @@ class NotesController < ApplicationController
     @note = Note.new(note_params)
     @note.practice = @practice
     if @note.save
-      flash.notice = "Your note has been saved"
+      respond_to do |format|
+        format.html do
+          flash.notice = "Your note has been saved"
+          redirect_to practice_path(@practice)
+        end
+        format.js
+      end
     else
       flash.notice = "make sure you write something"
+      redirect_to practice_path(@practice)
     end
-    redirect_to practice_path(@practice)
   end
 
   def show

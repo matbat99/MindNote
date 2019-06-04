@@ -1,0 +1,15 @@
+
+var newNoteForm = document.getElementById('note_content');
+var newNote = newNoteForm.value;
+
+var today = new Date;
+var notes = document.getElementById('note-list');
+
+notes.insertAdjacentHTML('afterbegin',
+  `<div class="note-card">
+        <p>${today.toDateString()}</p>
+        <h3>${newNote}</h3>
+      </div>
+    `);
+
+newNoteForm.value = "";

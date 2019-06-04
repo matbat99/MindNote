@@ -18,7 +18,7 @@
 
 </div>
 
-<%= form_for ([@practice, @note]) do |f| %>
+<%= form_for [@practice, @note], remote: true do |f| %>
   <div class="form-practice-show-container d-flex justify-content-around">
     <div class="d-flex">
       <%= f.text_area :content, placeholder: "Add a MindNote", class: "tl-bl-border-radius" %>
@@ -27,7 +27,7 @@
   </div>
 <% end %>
 
-<div class="note-list">
+<div class="note-list" id='note-list'>
   <h3>Past MindNotes</h3>
   <ul>
     <% @practice.notes.each do |note| %>
