@@ -30,7 +30,9 @@
   <div class="stat-card center" id="slide-4" style="background-image: linear-gradient(208.57deg, rgba(0, 0, 0, 0.5 ), rgba(0, 0, 0, 0.8)), url(<%= asset_path('music4.jpg')%>)">
 
     <h2>Last Practice</h2>
+    <% if  !@last_session.nil?%>
     <p><%= @last_session.created_at.strftime("%A, %b %d") %></p>
+    <% end %>
   </div>
 
   <div class="stat-card center" id="slide-5" style="background-image: linear-gradient(208.57deg, rgba(0, 0, 0, 0.5 ), rgba(0, 0, 0, 0.8)), url(<%= asset_path('music5.jpg')%>)">
