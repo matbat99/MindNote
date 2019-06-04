@@ -3,7 +3,10 @@ var newNoteForm = document.getElementById('note_content');
 var newNote = newNoteForm.value;
 
 var today = new Date;
-var notes = document.getElementById('note-list');
+var notes = document.getElementById('todays-notes');
+var header = document.getElementById('todays-notes-header');
+
+
 
 notes.insertAdjacentHTML('afterbegin',
   `<div class="note-card">
@@ -11,5 +14,9 @@ notes.insertAdjacentHTML('afterbegin',
         <h3>${newNote}</h3>
       </div>
     `);
-
+header.innerHTML = "";
+header.insertAdjacentHTML('afterbegin',"<h3>Today's MindNotes</h3>");
 newNoteForm.value = "";
+
+
+
