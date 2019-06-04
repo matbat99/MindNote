@@ -12,11 +12,12 @@
 }
 
 .dropdown-song-content{
+  margin-top: 15px;
   position: absolute;
   color: $secondary;
   display: none;
   height: 0;
-  transition: height, 0.2s, ease;
+  transition: height, 1s, display, .2s, ease-out;
   z-index: 1;
   background-color: white;
   right: 19px;
