@@ -1,0 +1,50 @@
+.note-card-content{
+  height: 100%;
+  width: 100%;
+  padding: 29px 26px;
+  margin: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  text-align: left;
+}
+
+.note-holder{
+  height: 350px;
+  overflow: scroll;
+  background-color: white;
+  opacity: 1;
+  border-radius: 6px;
+  text-align: left;
+  padding: 23px;
+}
+
+.note-list {
+  margin-bottom: 55px;
+
+  h3 {
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+  ul {
+    padding: 0;
+    list-style-type: none;
+  }
+}
+
+.note-card {
+  width: 90%;
+  margin: 10px auto;
+  padding: 7px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+  background-color: white;
+
+  p {
+    text-align: right;
+  }
+
+  h3 {
+    text-align: left;
+  }
+}
