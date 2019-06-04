@@ -8,7 +8,12 @@ const swipeMe = () => {
 
   const mySwiper = new Swiper('.swiper-container', {
       speed: 400,
-      spaceBetween: 100
+      spaceBetween: 100,
+      setWrapperSize: true,
+      effect: "coverflow",
+      autoplay: {
+        delay: 3000,
+      },
   });
 
 }
