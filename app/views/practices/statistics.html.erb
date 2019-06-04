@@ -1,27 +1,45 @@
 <%= render 'shared/navbar' %>
 <div class="song-card" style="background-image: linear-gradient(208.57deg, rgba(0, 0, 0, 0.5 ), rgba(0, 0, 0, 0.8)), url('<%= @practice.song.album_url %>')">
-<h1 class="page-header"><%= @practice.song.title %> by <%= @practice.song.artist.name %></h1>
+<h1 class="page-header flex-center"><%= @practice.song.title %> by <%= @practice.song.artist.name %></h1>
 </div>
-<div class="practice-card">
-  <% averages = [] %>
-  <% @practice.sessions.each do |session| %>
-    <% averages << session.grade %>
-  <% end %>
 
-  <% if averages.length == 0 %>
-    <p class="text-center">You haven't rehearsed this song yet!</p>
-  <% else %>
-    <% average = averages.sum / averages.length %>
-    <h3>Number of times rehearsed: <%= @practice.sessions.count %></h3>
-    <h3 class="mb-3"> Your average rating: <%= average  %></h3>
-  <% end %>
+<% averages = [] %>
+<% @practice.sessions.each do |session| %>
+  <% averages << session.grade %>
+<% end %>
 
-  <% if @practice.sessions.count == 0 %>
-    <h1 class="mn-btn linear-bg center relative">Start rehearsal
-      <%= link_to "", practice_path(@practice.id), class: "link" %>
-    </h1>
-  <% else %>
-    <p class="text-center">You started this song on <%= @practice.sessions.first.created_at.strftime("%A, %b %d") %></p>
-  <% end %>
-</div>
+<% if averages.length == 0 %>
+  <p class="text-center">You haven't rehearsed this song yet!</p>
+<% else %>
+  <% average = averages.sum / averages.length %>
+  <div class="stat stat-rehersl">
+    <div class="stat-info">
+      <h3><%= @practice.sessions.count %></h3>
+      <h3>Rehearsals</h3>
+    </div>
+    <i class="fas fa-guitar"></i>
+  </div>
+  <div class="stat stat-rating">
+    <div class="stat-info">
+      <h3><%= average  %></h3>
+      <h3 class="mb-3"> Rating </h3>
+    </div>
+    <i class="fas fa-star"></i>
+  </div>
+<% end %>
+
+<% if @practice.sessions.count == 0 %>
+  <h1 class="mn-btn linear-bg center relative">Start rehearsal
+    <%= link_to "", practice_path(@practice.id), class: "link" %>
+  </h1>
+<% else %>
+ <div class="stat stat-since">
+    <i class="fas fa-calendar-day"></i>
+    <div class="stat-info">
+      <h3 class="text-center">Since </h3>
+      <h3><%= @practice.sessions.first.created_at.strftime("%A, %b %d") %></h3>
+   </div>
+ </div>
+<% end %>
+
 
