@@ -236,7 +236,7 @@ DEPENDENCIES
   simple_form
   spring
   spring-watcher-listen (~> 2.0.0)
-  swiper-rails
+  swiper-rails (~> 1.0, >= 1.0.4)
   uglifier
   web-console (>= 3.3.0)
   webpacker
