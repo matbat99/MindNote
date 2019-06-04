@@ -3,6 +3,7 @@ var newNoteForm = document.getElementById('note_content');
 var newNote = newNoteForm.value;
 
 var today = new Date;
+var options = { weekday: 'long', month: 'short', day: '2-digit' };
 var notes = document.getElementById('todays-notes');
 var header = document.getElementById('todays-notes-header');
 
@@ -10,7 +11,7 @@ var header = document.getElementById('todays-notes-header');
 
 notes.insertAdjacentHTML('afterbegin',
   `<div class="note-card">
-        <p>${today.toDateString()}</p>
+        <p>${today.toLocaleString('en-GB', options)}</p>
         <h3>${newNote}</h3>
       </div>
     `);
