@@ -48,7 +48,7 @@ const stopTimerButton = document.querySelector('.resetTimer');
 
 
 if(beginTimerButton) {
-  beginTimerButton.addEventListener('click', startTimer);
+  startTimer();
 };
 
 if(startTimerButton) {
