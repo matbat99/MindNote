@@ -2,7 +2,9 @@
 <%#= image_tag asset_path("mind-note-colored") %>
 <%= render "practice_card", practice: @first  %>
 <div class="practice-queue">
-  <h3>Practice Queue</h3>
+  <% if !@songs_due.first.nil? %>
+    <h3>Practice Queue</h3>
+  <% end %>
   <% @songs_due.each_with_index do |practice, id| %>
     <% unless id == 0 %>
     <% if practice.importance >= 10 %>
