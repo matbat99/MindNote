@@ -2,6 +2,8 @@ class SessionsController < ApplicationController
   def create
     practice = Practice.find(params[:practice_id])
     grade = params[:star].to_i
+    grade = 1 if grade < 2
+
     session = Session.new(grade: grade, practice: practice)
     practice.next_interval(session.grade)
     practice.active = true
