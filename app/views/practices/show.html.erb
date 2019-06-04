@@ -43,6 +43,8 @@
 </div>
 
 
-<div class="resetTimer">
-  <%= link_to "End Practice", new_practice_session_path(@practice), class: 'mn-btn mn-btn-primary bottom-btn' %>
-</div>
+
+<%= form_tag new_practice_session_path(@practice), method: :get do %>
+<%= hidden_field_tag(:time, "5") %>
+<%= submit_tag(value="End Practice", options={class: 'mn-btn mn-btn-primary bottom-btn'}) %>
+<% end %>

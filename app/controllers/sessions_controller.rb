@@ -1,10 +1,12 @@
 class SessionsController < ApplicationController
   def create
+    @time = params[:time]
     practice = Practice.find(params[:practice_id])
     grade = params[:star].to_i
     grade = 1 if grade < 2
 
     session = Session.new(grade: grade, practice: practice)
+    session.time = @time
     practice.next_interval(session.grade)
     practice.active = true
     practice.save
@@ -25,6 +27,7 @@ class SessionsController < ApplicationController
   def new
     @practice = Practice.find(params[:practice_id])
     @session = Session.new
+    @time = params[:time]
   end
 
   def destroy
