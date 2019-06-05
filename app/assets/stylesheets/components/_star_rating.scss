@@ -45,3 +45,14 @@
 .star-row > label:hover ~ input:checked ~ label {
   color: $secondary;
 }
+
+.rating-splash-title {
+  font-size: 45px;
+}
+
+#rating-bottom-margin {
+  margin-bottom: 9px;
+}
+#rating-time {
+  font-size: 21px;
+}
