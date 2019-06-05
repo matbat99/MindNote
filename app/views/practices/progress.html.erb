@@ -76,7 +76,14 @@
       <div class="practice-card stats-add" id="slide-4" style="background-image: linear-gradient(208.57deg, rgba(0, 0, 0, 0.5 ), rgba(0, 0, 0, 0.8)), url(<%= asset_path('music4.jpg')%>)">
         <h3 class="title-space muted-text">Last Practice:</h3>
         <div class="details">
-          <h1 class="boldify"><%= @last_session.created_at.strftime("%A, %b %d") %></h1>
+          <h1 class="boldify">
+            <% if  !@last_session.nil? %>
+              <%= @last_session.created_at.strftime("%A, %b %d") %>
+            <% else %>
+              You haven't rehearsed anything yet.
+            <% end %>
+
+            </h1>
         </div>
       </div>
     </div>

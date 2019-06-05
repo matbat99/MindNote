@@ -57,6 +57,7 @@ class NotesController < ApplicationController
     @practice = Practice.find(params[:practice_id])
     @note = Note.find(params[:id])
     @note.destroy
+    flash.notice = "You removed a note"
     redirect_to practice_notes_path(@practice)
   end
 

@@ -32,9 +32,9 @@ class PracticesController < ApplicationController
     grade_sum = 0
     @user_total_sessions.each { |session| grade_sum += session.grade }
     if @user_total_sessions.count > 0
-      @average_grade = grade_sum / @user_total_sessions.count
+      @average_grade = (grade_sum / @user_total_sessions.count).to_f
     else
-      @average_grade = 1
+      @average_grade = 1.0
     end
     @number_of_total_sessions = 0
     @practices.each { |practice| @number_of_total_sessions += practice.sessions.count }
