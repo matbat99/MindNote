@@ -1,0 +1,15 @@
+<%= render 'shared/navbar' %>
+
+
+<h1 class="center-30 header-1"><%= @practice.song.title %> Notes</h1>
+
+
+<%= form_for [@practice, @note], :url => create_note_path(@practice) do |f| %>
+  <div class="form-practice-show-container d-flex justify-content-around">
+      <div class="note-form d-flex">
+      <%= f.text_area :content, placeholder: @note.content, class: "tl-bl-border-radius text-form-box"%>
+      <%= f.hidden_field :practice_id, value: @practice.id %>
+    </div>
+  </div>
+  <%= f.submit "done", class: "mn-btn mn-btn-primary bottom-btn" %>
+<% end %>

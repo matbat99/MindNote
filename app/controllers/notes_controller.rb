@@ -4,6 +4,11 @@ class NotesController < ApplicationController
     @notes = @practice.notes
   end
 
+  def new
+    @practice = Practice.find(params[:practice_id])
+    @note = Note.new
+  end
+
   def create
     @practice = Practice.find(params[:practice_id])
     @note = Note.new(note_params)
@@ -19,6 +24,18 @@ class NotesController < ApplicationController
     else
       flash.notice = "make sure you write something"
       redirect_to practice_path(@practice)
+    end
+  end
+
+  def create_from_note_menu
+    @practice = Practice.find(params[:id])
+    @note = Note.new(note_params)
+    @note.practice_id = @practice.id
+    if @note.save
+      redirect_to practice_notes_path(@practice)
+    else
+      flash.notice = "Your note can't be blank"
+      render "new"
     end
   end
 
@@ -40,7 +57,7 @@ class NotesController < ApplicationController
     @practice = Practice.find(params[:practice_id])
     @note = Note.find(params[:id])
     @note.destroy
-    redirect_to practice_notes(@practice)
+    redirect_to practice_notes_path(@practice)
   end
 
   private
