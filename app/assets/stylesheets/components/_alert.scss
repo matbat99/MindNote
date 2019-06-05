@@ -1,12 +1,15 @@
 .alert {
+  display: inline-block;
   position: fixed;
   bottom: 65px;
   left: 0px;
-  font-size: $header-font-size-2;
+  font-size: $header-font-size-1;
   z-index: 1000;
   padding: 24px;
+  color: white;
+  opacity: 0.7;
   border-radius: 10px;
-  background-color: #F0E6EF;
+  background-color: #eb8072;
   border:2px solid #b6c5c7;
   font-family: $headers-font;
 
