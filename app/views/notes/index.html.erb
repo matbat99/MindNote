@@ -4,12 +4,15 @@
   <% if @notes.empty? %>
     <h1>You have no notes for this song</h1>
   <% else %>
-    <div class="review-songs">
+    <div class="notes-list">
       <% @notes.each do |note| %>
-        <div class="song-item relative">
-          <%= link_to "", practice_note_path(@practice, note), class: "link" %>
-          <p class="note-card-content"><%= note.content %></p>
+        <div class="note">
+          <p class="note-content"><%= note.content %></p>
+          <i class="far fa-edit">
+            <%= link_to "", practice_note_path(@practice, note), class: "link" %>
+          </i>
         </div>
+        <div class="line"></div>
     <% end %>
     </div>
   <% end %>
