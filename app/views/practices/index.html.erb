@@ -17,14 +17,19 @@
           <div class="relative">
             <%= link_to "", statistics_practice_path(practice), class: "link"  %>
             <p>Stats</p>
+            <i class="fas fa-chart-line"></i>
           </div>
+          <div class="line"></div>
           <div class="relative">
             <%= link_to "", practice_notes_path(practice), class: "link"  %>
             <p>Notes</p>
+            <i class="far fa-clipboard"></i>
           </div>
+          <div class="line"></div>
           <div class="relative">
             <%= link_to "", practice_path(practice), method: :delete, class: "link"  %>
             <p>Delete</p>
+            <i class="fas fa-trash-alt"></i>
           </div>
         </div>
       </div>

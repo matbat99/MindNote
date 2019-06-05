@@ -34,10 +34,19 @@
     justify-content: space-around;
     align-items: center;
   }
+  .line{
+    background-color: $gray;
+    width: 76%;
+    margin: 0 auto;
+    text-align: center;
+    height: 1px;
+  }
 }
+
 
 .show{
   display: block;
   height: 156px;
+  width: 119px;
 
 }
