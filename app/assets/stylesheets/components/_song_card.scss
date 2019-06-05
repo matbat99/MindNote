@@ -2,6 +2,7 @@
   background-size: cover;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   height: 50vh;
   padding: 15px;
   align-items: center;
@@ -10,7 +11,6 @@
   margin-bottom: 25px;
 
   .song-card-info{
-    padding-top: 60px;
     h3  {
       font-size: $main-font-size-1;
     }
