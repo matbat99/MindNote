@@ -23,12 +23,24 @@ class NotesController < ApplicationController
   end
 
   def show
+    @practice = Practice.find(params[:practice_id])
     @note = Note.find(params[:id])
   end
 
+  def update
+    @practice = Practice.find(params[:practice_id])
+    @note = Note.find(params[:id])
+    content = params[:note][:content]
+    @note.content = content
+    @note.save!
+    redirect_to practice_notes_path(@practice)
+  end
+
   def destroy
+    @practice = Practice.find(params[:practice_id])
     @note = Note.find(params[:id])
     @note.destroy
+    redirect_to practice_notes(@practice)
   end
 
   private

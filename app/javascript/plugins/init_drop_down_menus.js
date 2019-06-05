@@ -25,7 +25,7 @@ const addDropDownMenus = () => {
 
       drop.addEventListener('click', (event) => {
 
-        dropMenu.classList.toggle("show");
+        dropMenu.classList.toggle("show-options");
       });
       counter = counter + 1;
     });
