@@ -34,7 +34,7 @@ swipeMe();
 
 
 
-alertClose();
+// alertClose();
 
 const beginTimerButton = document.querySelector('.timer');
 const startTimerButton = document.querySelector('.startTimer');
