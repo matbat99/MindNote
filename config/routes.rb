@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   devise_for :users
   root to: 'pages#home'
   resources :songs, only: [:new, :create]
@@ -21,4 +20,5 @@ Rails.application.routes.draw do
   end
 
   resources :playlists, only: [:index, :show, :create]
+  resources :imports, only: :index
 end
