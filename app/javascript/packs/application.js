@@ -11,6 +11,7 @@ import { showUserPlaylists } from '../plugins/init_spotify_playlists'
 
 const searchBox = document.querySelector("#song-search");
 const searchBoxText = document.querySelector('#song-search .query');
+const noteTextField = document.querySelector('#note_content');
 const noteContent = document.querySelector('.form-practice-show-container #note_content');
 const playlistList = document.querySelector('#playlists');
 var drops = document.querySelectorAll('.dropdown-song');
@@ -26,6 +27,17 @@ if(searchBox) {
   });
   };
 
+if(searchBoxText) {
+  searchBoxText.addEventListener('click', (event) => {
+    searchBoxText.placeholder = "";
+  });
+  };
+
+  if(noteTextField) {
+  noteTextField.addEventListener('click', (event) => {
+    noteTextField.placeholder = "";
+  });
+  };
 
 
 if(drops) {
