@@ -1,8 +1,17 @@
 <%= render 'shared/navbar' %>
+<h3 class="notes-title">Notes:</h3>
+<h1 class="note-song-title-header"><%= @practice.song.title %></h1>
 
-<h1 class="center-30 header-1"><%= @practice.song.title %> Notes</h1>
   <% if @notes.empty? %>
-    <h1>You have no notes for this song</h1>
+    <div class="notes-list">
+      <div class="note">
+        <div class="note-left">
+          <p class="text-center">You have no notes for this song</p>
+        </div>
+      </div>
+      <div class="line"></div>
+    </div>
+
   <% else %>
     <div class="notes-list">
       <% @notes.each do |note| %>
