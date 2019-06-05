@@ -16,7 +16,7 @@ class SongsController < ApplicationController
       album = song_data["artworkUrl100"]
       album.gsub!(/source\/*.*.jpg/, "source/600x600bb.jpg")
       song = Song.find_or_create_by(title: song_data["trackName"], artist: artist, album_url: album)
-      practice = Practice.new(user: current_user, song: song)
+      practice = Practice.find_or_create_by(user: current_user, song: song)
       if practice.save
         flash.notice = "You added #{practice.song.title} to your list"
       else
