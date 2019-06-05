@@ -1,4 +1,5 @@
-module ApplicationHelper
+module MetaTagsHelper
+  # All these methods are in application_helper this helper isn't being imported
   def meta_title
     content_for?(:meta_title) ? content_for(:meta_title) : DEFAULT_META["meta_title"]
   end
