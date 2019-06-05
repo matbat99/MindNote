@@ -8,9 +8,14 @@
       <% @notes.each do |note| %>
         <div class="note">
           <p class="note-content"><%= note.content %></p>
-          <i class="far fa-edit">
+          <div class="relative">
             <%= link_to "", practice_note_path(@practice, note), class: "link" %>
-          </i>
+            <i class="far fa-edit"></i>
+          </div>
+           <div class="relative">
+            <%= link_to "", practice_note_path(@practice, note), method: :delete, class: "link" %>
+            <i class="fas fa-trash-alt"></i>
+          </div>
         </div>
         <div class="line"></div>
     <% end %>

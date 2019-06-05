@@ -1,6 +1,13 @@
-<%= render "shared/navbar" %>
+<%= render 'shared/navbar' %>
+
+<h1 class="center-30 header-1"><%= @practice.song.title %> Notes</h1>
 
 
-<div class="note-holder">
-  <p><%= @note.content %></p>
-</div>
+<%= form_for [@practice, @note] do |f| %>
+  <div class="form-practice-show-container d-flex justify-content-around">
+      <div class="note-form d-flex">
+      <%= f.text_area :content, placeholder: @note.content, class: "tl-bl-border-radius text-form-box"%>
+    </div>
+  </div>
+  <%= f.submit "done", class: "mn-btn mn-btn-primary bottom-btn" %>
+<% end %>
