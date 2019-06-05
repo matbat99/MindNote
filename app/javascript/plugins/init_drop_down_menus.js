@@ -1,10 +1,19 @@
 
+const closeAllMenus = (not_this_one) => {
+  var dropMenus = document.querySelectorAll('.dropdown-song-content');
+  console.log(not_this_one);
+  dropMenus.forEach((menu) => {
+    if (menu.id !== not_this_one){
+    menu.classList.remove('show-options');
+    }
+  });
+}
 
 
 const addDropDownMenus = () => {
 
   var drops = document.querySelectorAll('.dropdown-song');
-  var dropMenus = document.querySelectorAll('.dropdown-song-content')
+  var dropMenus = document.querySelectorAll('.dropdown-song-content');
 
 
   if (dropMenus){
@@ -25,6 +34,7 @@ const addDropDownMenus = () => {
 
       drop.addEventListener('click', (event) => {
 
+        closeAllMenus(dropMenu.id);
         dropMenu.classList.toggle("show-options");
       });
       counter = counter + 1;
@@ -33,4 +43,8 @@ const addDropDownMenus = () => {
 
 };
 
+
+
+
 export {addDropDownMenus}
+
