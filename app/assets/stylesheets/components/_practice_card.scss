@@ -85,4 +85,16 @@
 
 .message {
   color: $body-color;
+
+  img {
+    width: 200px;
+    opacity: .6;
+  }
+  h1 {
+  }
+
+  h3 {
+    margin-top: 50px;
+    margin-bottom:0;
+  }
 }
