@@ -1,0 +1,73 @@
+.form-login {
+  border-radius: 5px;
+  padding: 40px 20px 14px 20px;
+  background-color: white;
+  width: 90%;
+  margin: auto;
+
+  h2 {
+    font-weight: lighter;
+  }
+
+  .form-check {
+    text-align: left;
+    margin-left: 15px;
+  }
+
+  .form-title {
+    text-align: center;
+    color: $gray;
+  }
+
+}
+
+.form-login input[type="email"],
+.form-login input[type="password"],
+.form-login input[type="text"],
+.form-login input[type="date"],
+.form-login input[type="datetime"],
+.form-login input[type="number"],
+.form-login input[type="search"],
+.form-login input[type="time"],
+.form-login input[type="url"],
+.form-login textarea,
+.form-login select
+{
+  box-sizing: border-box;
+  font-size: 20px !important;
+  text-align: left;
+  outline: none;
+  display: block;
+  margin: 30px auto;
+  width: 90%;
+  padding: 7px;
+  border: none;
+  border-bottom: 1px solid #666;
+  background: transparent;
+  height: 25px;
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+.login-links {
+  a {
+    color: #C4C4C4;
+
+    &:hover {
+      color: #7C7C7C;
+    }
+  }
+}
+
+.logo-title {
+  margin: 50px 11px 50px 0;
+  width: 80%;
+  // padding-right: 4px;
+}
+
+.music-sheet {
+  height: 100vh;
+  background-size: cover;
+  background-image: linear-gradient(45deg, rgba(232, 115, 88, .2), rgba(232, 115, 88, .2)), url(asset_path("music-sheet"));
+}
