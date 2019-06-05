@@ -12,7 +12,7 @@
         <p><%= practice.song.artist.name %></p>
       </div>
       <div class="dropdown-song">
-        <p class="dropbtn-song">...</p>
+        <div class="dropbtn-song"><i class="fas fa-ellipsis-h"></i></div>
         <div id="myDropdown" class="dropdown-song-content">
           <div class="relative">
             <%= link_to "", statistics_practice_path(practice), class: "link"  %>
@@ -43,7 +43,7 @@
         <p class="muted-text"><%= practice.song.artist.name %></p>
       </div>
       <div class="dropdown-song">
-        <p class="dropbtn-song">...</p>
+        <div class="dropbtn-song"><i class="fas fa-ellipsis-h"></i></div>
         <div id="myDropdown" class="dropdown-song-content">
           <div class="relative">
             <%= link_to "", statistics_practice_path(practice), class: "link"  %>

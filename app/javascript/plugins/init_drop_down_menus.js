@@ -1,7 +1,7 @@
 
 const closeAllMenus = (not_this_one) => {
   var dropMenus = document.querySelectorAll('.dropdown-song-content');
-  console.log(not_this_one);
+
   dropMenus.forEach((menu) => {
     if (menu.id !== not_this_one){
     menu.classList.remove('show-options');
