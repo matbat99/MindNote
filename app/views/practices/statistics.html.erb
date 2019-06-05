@@ -1,42 +1,4 @@
-<div class="nav-container">
-  <nav role="navigation" class="mn-navbar nav-swiper-width">
-    <div id="menuToggle">
-      <input type="checkbox" />
-      <span></span>
-      <span></span>
-      <span></span>
-      <ul id="menu">
-        <%= link_to root_path, class: "dropdown-item" do %>
-        <li>Home</li>
-        <% end %>
-        <%= link_to learn_path, class: "dropdown-item" do %>
-        <li>Learn a song</li>
-        <% end %>
-        <%= link_to practices_path, class: "dropdown-item" do %>
-        <li>My Library</li>
-        <% end %>
-        <%= link_to progress_practices_path, class: "dropdown-item" do %>
-        <li>My Statistics</li>
-        <% end %>
-        <%= link_to destroy_user_session_path, method: :delete, class: "dropdown-item" do %>
-        <li>Log Out</li>
-        <% end %>
-      </ul>
-    </div>
-    <div class="mn-avatar">
-      <div class="avatar-info">
-        <% if current_user.photo %>
-        <%= cl_image_tag current_user.photo, class: "profile-photo"%>
-        <% else %>
-        <img src="https://picsum.photos/200/200" alt="profile">
-        <% end %>
-        <h3><%= current_user.name %></h3>
-      </div>
-      <%= image_tag asset_path("mn-logo"), class: "avatar-logo" %>
-    </div>
-  </nav>
-</div>
-
+<%= render 'shared/navbar' %>
 <div class="song-card" style="background-image: linear-gradient(208.57deg, rgba(0, 0, 0, 0.5 ), rgba(0, 0, 0, 0.8)), url('<%= @practice.song.album_url %>')">
 <h1 class="page-header flex-center"><%= @practice.song.title %> by <%= @practice.song.artist.name %></h1>
 </div>

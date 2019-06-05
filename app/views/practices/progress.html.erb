@@ -1,42 +1,4 @@
-
-<div class="nav-container">
-  <nav role="navigation" class="mn-navbar nav-swiper-width-progress">
-    <div id="menuToggle">
-      <input type="checkbox" />
-      <span></span>
-      <span></span>
-      <span></span>
-      <ul id="menu">
-        <%= link_to root_path, class: "dropdown-item" do %>
-        <li>Home</li>
-        <% end %>
-        <%= link_to learn_path, class: "dropdown-item" do %>
-        <li>Learn a song</li>
-        <% end %>
-        <%= link_to practices_path, class: "dropdown-item" do %>
-        <li>My Library</li>
-        <% end %>
-        <%= link_to progress_practices_path, class: "dropdown-item" do %>
-        <li>My Statistics</li>
-        <% end %>
-        <%= link_to destroy_user_session_path, method: :delete, class: "dropdown-item" do %>
-        <li>Log Out</li>
-        <% end %>
-      </ul>
-    </div>
-    <div class="mn-avatar">
-      <div class="avatar-info">
-        <% if current_user.photo %>
-        <%= cl_image_tag current_user.photo, class: "profile-photo"%>
-        <% else %>
-        <img src="https://picsum.photos/200/200" alt="profile">
-        <% end %>
-        <h3><%= current_user.name %></h3>
-      </div>
-      <%= image_tag asset_path("mn-logo"), class: "avatar-logo" %>
-    </div>
-  </nav>
-</div>
+<%= render 'shared/navbar' %>
 
 <div class="swiper-container">
   <div class="swiper-wrapper">
