@@ -1,4 +1,5 @@
 meta_product_name: "Product Name"
 meta_title: "MindNote - The right way to practice"
 meta_description: "Tracks all your music and tells you the best songs to practice"
-meta_image: "title-logo.png" # should exist in `app/assets/images/`
+meta_image: "mn-logo.png"
+twitter_account: "@mindnotepro"
