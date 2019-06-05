@@ -26,6 +26,11 @@ if(searchBox) {
   });
   };
 
+if(searchBox) {
+  searchBoxText.addEventListener('click', (event) => {
+    searchBoxText.placeholder = "";
+  });
+  };
 
 
 if(drops) {
