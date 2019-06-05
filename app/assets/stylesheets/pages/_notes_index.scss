@@ -8,8 +8,28 @@
     justify-content: space-around;
     .note-content{
     margin-bottom: 0;
-    flex-grow: 5;
+    width: 100%;
     text-align: left;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    }
+    .note-left{
+      margin-bottom: 0;
+      flex-grow: 5;
+      text-align: left;
+      width: 30%;
+      p{
+        margin-bottom: 2px;
+      }
+      .note-date{
+        font-size: 17px;
+      }
+      .note-content{
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
     }
     i{
       font-size: 18px;

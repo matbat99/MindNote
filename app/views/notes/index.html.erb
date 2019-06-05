@@ -7,7 +7,10 @@
     <div class="notes-list">
       <% @notes.each do |note| %>
         <div class="note">
-          <p class="note-content"><%= note.content %></p>
+          <div class="note-left">
+            <p class="note-date"><%= note.created_at.strftime('%A, %b %d') %></p>
+            <p class="note-content"><%= note.content %></p>
+          </div>
           <div class="relative">
             <%= link_to "", practice_note_path(@practice, note), class: "link" %>
             <i class="far fa-edit"></i>
@@ -20,4 +23,5 @@
         <div class="line"></div>
     <% end %>
     </div>
+    <%= link_to "+", new_practice_note_path(@practice), class: "mn-btn-circle botom-right-corner"  %>
   <% end %>
