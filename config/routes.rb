@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
+  get '/landing', to: 'pages#landing'
   resources :songs, only: [:new, :create]
   get 'songs/learn', to: "songs#learn", as: :learn
   post '/practices/:id/create_from_note_menu', to: "notes#create_from_note_menu", as: :create_note
