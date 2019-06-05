@@ -49,7 +49,7 @@
 <% if averages.length == 0 %>
   <p class="text-center">You haven't rehearsed this song yet!</p>
 <% else %>
-  <% average = averages.sum / averages.length %>
+  <% average = (averages.sum / averages.length).to_f %>
   <div class="swiper-container">
     <!-- Additional required wrapper -->
   <div class="swiper-wrapper">
@@ -67,7 +67,7 @@
        <div class="stat stat-rating">
         <div class="stat-info">
           <h3 class="numb"><%= average  %></h3>
-          <h3 class="mb-3 quality"> Rating </h3>
+          <h3 class="mb-3 quality"> Average Rating </h3>
         </div>
         <i class="fas fa-star"></i>
       </div>
