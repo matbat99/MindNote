@@ -1,4 +1,5 @@
 <%= form_tag("/playlists", method: "post", class: "playlist-songs") do %>
+  <h1>Songs</h1>
   <% incrementor = 0 %>
   <% @songs.each do |song| %>
     <% song_data = { name: song["track"]["name"], artist: song["track"]["artists"][0]["name"], url: song["track"]["album"]["images"][0]["url"] } %>

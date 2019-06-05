@@ -11,22 +11,32 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  border: 0 solid #80DA60;
+  transition: all .3s ease;
 
-  h2 {
-    transition: color .3s ease;
+  p {
+    font-size: $header-font-size-1;
   }
 }
 
 #playlists input[type=radio]:checked + .playlist-card {
-  h2 {
-    color: $primary;
-  }
+  border: 8px solid #80DA60;
+}
+
+#playlists {
+  margin-bottom: 55px;
 }
 
 .playlist-songs {
-
+  margin: 25px 0 45px 0;
   padding: 10px;
   input[type=checkbox]:checked + .song-item {
     border-right: 13px solid #80DA60;
+  }
+}
+
+.playlist-form {
+  h1 {
+    margin: 30px;
   }
 }
