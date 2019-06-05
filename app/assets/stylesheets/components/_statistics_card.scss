@@ -6,11 +6,20 @@
   justify-content: space-around;
 }
 
-.stat-card {
-  width: 45%;
-  margin: 2px 5px;
+.stats-add {
+  width: 90%;
+  justify-content: space-around;
+}
+
+
+.navigate-choices {
+  display: flex;
+  justify-content: space-between;
+  font-size: 19px;
   color: white;
-  background-repeat: no-repeat;
-  background-size: cover;
-  object-position: center;
+  position: relative;
+  bottom: 35px;
+  width: 86%;
+  margin: auto;
+
 }

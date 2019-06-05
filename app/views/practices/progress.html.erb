@@ -41,40 +41,62 @@
 <div class="swiper-container">
   <div class="swiper-wrapper">
     <div class="swiper-slide">
-       <div class="stat-card center" style="background-image: linear-gradient(208.57deg, rgba(0, 0, 0, 0.5 ), rgba(0, 0, 0, 0.8)), url(<%= asset_path('music6.jpg')%>)">
-        <h2>Joined</h2>
-        <p><%= current_user.created_at.strftime("%A, %b %d") %></p>
+      <div class="practice-card stats-add" style="background-image: linear-gradient(208.57deg, rgba(0, 0, 0, 0.5 ), rgba(0, 0, 0, 0.8)), url(<%= asset_path('music6.jpg')%>)">
+        <h3 class="title-space muted-text">Joined:</h3>
+        <div class="details">
+          <h1 class="boldify"><%= current_user.created_at.strftime("%A, %b %d") %></h1>
+        </div>
       </div>
     </div>
     <div class="swiper-slide">
-      <div class="stat-card center" id="slide-1" style="background-image: linear-gradient(208.57deg, rgba(0, 0, 0, 0.5 ), rgba(0, 0, 0, 0.8)), url(<%= asset_path('music1.jpg')%>)">
-        <h2> Songs practiced</h2>
-        <p><%= (@practices.select { |practice| practice.sessions.count > 0 }).count  %></p>
+      <div class="practice-card stats-add" id="slide-1" style="background-image: linear-gradient(208.57deg, rgba(0, 0, 0, 0.5 ), rgba(0, 0, 0, 0.8)), url(<%= asset_path('music1.jpg')%>)">
+        <h3 class="title-space muted-text">Songs practiced:</h3>
+        <div class="details">
+          <h1 class="boldify"><%= (@practices.select { |practice| practice.sessions.count > 0 }).count  %></h1>
+        </div>
       </div>
     </div>
     <div class="swiper-slide">
-       <div class="stat-card center" id="slide-2" style="background-image: linear-gradient(208.57deg, rgba(0, 0, 0, 0.5 ), rgba(0, 0, 0, 0.8)), url(<%= asset_path('music2.jpg')%>)">
-        <h2>Repertoire</h2>
-        <p><%= @practices.count %> songs</p>
+      <div class="practice-card stats-add" id="slide-2" style="background-image: linear-gradient(208.57deg, rgba(0, 0, 0, 0.5 ), rgba(0, 0, 0, 0.8)), url(<%= asset_path('music2.jpg')%>)">
+        <h3 class="title-space muted-text">Repertoire:</h3>
+        <div class="details">
+          <h1 class="boldify"><%= @practices.count %> songs</h1>
+        </div>
       </div>
     </div>
     <div class="swiper-slide">
-        <div class="stat-card center" id="slide-3" style="background-image: linear-gradient(208.57deg, rgba(0, 0, 0, 0.5 ), rgba(0, 0, 0, 0.8)), url(<%= asset_path('music3.jpg')%>)">
-        <p>Rehearsals</h2>
-        <p><%= @number_of_total_sessions %></p>
+      <div class="practice-card stats-add" id="slide-3" style="background-image: linear-gradient(208.57deg, rgba(0, 0, 0, 0.5 ), rgba(0, 0, 0, 0.8)), url(<%= asset_path('music3.jpg')%>)">
+        <h3 class="title-space muted-text">Rehearsals:</h3>
+        <div class="details">
+          <h1 class="boldify"><%= @number_of_total_sessions %></h1>
+        </div>
       </div>
     </div>
     <div class="swiper-slide">
-      <div class="stat-card center" id="slide-4" style="background-image: linear-gradient(208.57deg, rgba(0, 0, 0, 0.5 ), rgba(0, 0, 0, 0.8)), url(<%= asset_path('music4.jpg')%>)">
-        <h2>Last Practice</h2>
-        <p><%= @last_session.created_at.strftime("%A, %b %d") %></p>
+      <div class="practice-card stats-add" id="slide-4" style="background-image: linear-gradient(208.57deg, rgba(0, 0, 0, 0.5 ), rgba(0, 0, 0, 0.8)), url(<%= asset_path('music4.jpg')%>)">
+        <h3 class="title-space muted-text">Last Practice:</h3>
+        <div class="details">
+          <h1 class="boldify"><%= @last_session.created_at.strftime("%A, %b %d") %></h1>
+        </div>
       </div>
     </div>
     <div class="swiper-slide">
-      <div class="stat-card center" id="slide-5" style="background-image: linear-gradient(208.57deg, rgba(0, 0, 0, 0.5 ), rgba(0, 0, 0, 0.8)), url(<%= asset_path('music5.jpg')%>)">
-        <h2>Grade average</h2>
-        <p>Average rehearsal grade: <%= @average_grade %> </p>
+      <div class="practice-card stats-add" id="slide-5" style="background-image: linear-gradient(208.57deg, rgba(0, 0, 0, 0.5 ), rgba(0, 0, 0, 0.8)), url(<%= asset_path('music5.jpg')%>)">
+        <h3 class="title-space muted-text">Average Grade:</h3>
+        <div class="details">
+          <h1 class="boldify"><%= @average_grade %></h1>
+        </div>
       </div>
     </div>
+  </div>
+</div>
+
+<div class="navigate-choices">
+ <div class="left-arrow">
+    <i class="fas fa-arrow-left"></i>
+ </div>
+ <div class="right-arrow">
+    <i class="fas fa-arrow-right"></i>
+  </div>
 </div>
 
