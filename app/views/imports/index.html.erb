@@ -2,5 +2,8 @@
   <h1>How would you like to add your songs?</h1>
   <%= link_to "Add Song", new_song_path, class: "mn-btn mn-btn-create"  %>
   <h1>- Or -</h1>
-  <%= link_to "Import Playlist", "https://accounts.spotify.com/authorize?client_id=1e321e4cf1734fb88baf478fca5e6c4b&redirect_uri=https:%2F%2Fwww.mindnote.pro%2Fplaylists&response_type=token", class: "mn-btn mn-btn-spotify" %>
+  <%= link_to "Import Playlist", "https://accounts.spotify.com/authorize?client_id=1e321e4cf1734fb88baf478fca5e6c4b&redirect_uri=http:%2F%2Flocalhost:3000%2Fplaylists&response_type=token", class: "mn-btn mn-btn-spotify" %>
 </div>
+
+
+<%#= link_to "Import Playlist", "https://accounts.spotify.com/authorize?client_id=1e321e4cf1734fb88baf478fca5e6c4b&redirect_uri=https:%2F%2Fwww.mindnote.pro%2Fplaylists&response_type=token", class: "mn-btn mn-btn-spotify" %>
