@@ -20,8 +20,9 @@ class PlaylistsController < ApplicationController
       @songs.each do |song_data|
         artist = Artist.find_or_create_by(name: song_data["artist"])
         song = Song.find_or_create_by(title: song_data["name"], artist: artist, album_url: song_data["url"])
-        practice = Practice.create!(user: current_user, song: song)
+        practice = Practice.find_or_create_by(user: current_user, song: song)
       end
+      flash.notice = "You Imported #{@songs.count} Songs"
       redirect_to :root
     end
   rescue JSON::ParserError => e
