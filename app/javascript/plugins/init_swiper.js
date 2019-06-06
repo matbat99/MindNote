@@ -10,12 +10,12 @@ const swipeMe = () => {
       speed: 400,
       spaceBetween: 10,
       slidesPerView: 1,
-      autoplay: {
-        delay: 3000,
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
       },
-  });
-
-}
+    });
+  }
 // var mySwiper = document.querySelector('.swiper-container').swiper
 
 export { swipeMe }
