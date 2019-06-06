@@ -22,3 +22,15 @@
   justify-content: center;
 }
 
+.swiper-pagination-bullet{
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  border-radius: 100%;
+  background: #000;
+  opacity: .2;
+  &.swiper-pagination-bullet-active {
+    background: blue !important;
+    opacity: 1;
+  }
+}
