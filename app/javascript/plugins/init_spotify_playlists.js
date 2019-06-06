@@ -40,7 +40,7 @@ const showUserPlaylists = () => {
   .then((data) => {
     user_id = data["id"];
     // console.log(user_id);
-    fetch(`https://api.spotify.com/v1/users/${user_id}/playlists?offset=0&limit=50`, {
+    fetch(`https://api.spotify.com/v1/users/${user_id}/playlists?offset=0&limit=10`, {
       headers: {
         "Authorization": `Bearer ${access_token}`,
         "Accept": "application/json",
