@@ -8,6 +8,10 @@ class PlaylistsController < ApplicationController
     url = "https://api.spotify.com/v1/playlists/#{playlist_id}/tracks"
     playlist_data = JSON.parse(open(url, "Authorization" => "Bearer #{access_token}").read)
     @songs = playlist_data["items"]
+
+  rescue OpenURI::HTTPError => e
+    flash.notice = "No playlist was selected, please try again"
+    redirect_to imports_path
   end
 
   def create
