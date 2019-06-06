@@ -55,6 +55,7 @@ class Practice < ApplicationRecord
         self.repetition = 2
       else
         self.interval = (self.interval * self.easiness_factor).round
+        self.interval = 60 if self.interval > 60
         self.repetition = self.repetition + 1
       end
     else
