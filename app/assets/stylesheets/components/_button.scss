@@ -142,6 +142,10 @@
   border-radius: 25px;
   border: 2px solid white;
   font-size: $header-font-size-1;
+  &:hover{
+    background-color: white ;
+    color: red;
+  }
 }
 
 .add-song{
