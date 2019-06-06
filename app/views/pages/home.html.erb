@@ -3,7 +3,7 @@
 <%= render "practice_card", practice: @first  %>
 <div class="practice-queue">
   <% if !@songs_due.first.nil? %>
-    <h3>Practice Set List</h3>
+    <h3>Practice Setlist</h3>
   <% end %>
   <% @songs_due.each_with_index do |practice, id| %>
     <% unless id == 0 %>
