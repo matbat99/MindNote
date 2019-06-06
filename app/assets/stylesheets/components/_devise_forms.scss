@@ -40,7 +40,7 @@
   display: block;
   margin: 30px auto;
   width: 90%;
-  padding: 7px;
+  padding: 0px;
   border: none;
   border-bottom: 1px solid #666;
   background: transparent;
@@ -69,5 +69,17 @@
 .music-sheet {
   height: 100vh;
   background-size: cover;
-  background-image: linear-gradient(45deg, rgba(232, 115, 88, .2), rgba(232, 115, 88, .2)), url(asset_path("music-sheet"));
+  background-image: linear-gradient(45deg, rgba(232, 115, 88, .5), rgba(232, 115, 88, .5)), url(asset_path("music-sheet"));
+
+  h1 {
+    color: white;
+    font-size: 30px;
+    margin-bottom: 100px;
+  }
+
+  a {
+    width: 90%;
+    margin: auto;
+    border: 2px solid white;
+  }
 }

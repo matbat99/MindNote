@@ -25,7 +25,7 @@ class Practice < ApplicationRecord
     practices = practices.select { |practice| practice.active? }
     practices = practices.select { |practice| practice.need_to_practice?}
     practices = practices.each { |practice| practice.update_importance }
-    practices.sort_by { |practice| practice.importance }
+    practices = practices.sort_by { |practice| practice.importance }
     practices.reverse
   end
 
@@ -33,7 +33,7 @@ class Practice < ApplicationRecord
     today = DateTime.now
     last_session = self.sessions.order(:created_at).last.created_at
     last_session += self.interval.days
-    importance = (today.day - last_session.day).abs
+    importance = (today - last_session.to_date).to_i
     self.update(importance: importance)
   end
 
@@ -55,6 +55,7 @@ class Practice < ApplicationRecord
         self.repetition = 2
       else
         self.interval = (self.interval * self.easiness_factor).round
+        self.interval = 60 if self.interval > 60
         self.repetition = self.repetition + 1
       end
     else
