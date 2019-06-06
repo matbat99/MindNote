@@ -11,7 +11,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  border: 0 solid #80DA60;
+  border: 0 solid #1db954;
   transition: all .3s ease;
 
   p {
@@ -20,7 +20,7 @@
 }
 
 #playlists input[type=radio]:checked + .playlist-card {
-  border: 8px solid #80DA60;
+  border: 8px solid #1db954;
 }
 
 #playlists {
@@ -31,7 +31,7 @@
   margin: 25px 0 45px 0;
   padding: 10px;
   input[type=checkbox]:checked + .song-item {
-    border-right: 13px solid #80DA60;
+    border-right: 13px solid #1db954;
   }
 }
 
