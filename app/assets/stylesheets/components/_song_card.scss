@@ -18,7 +18,13 @@
       margin: 0;
     }
   }
+}
 
+.page-title {
+  font-size: 36px !important;
+  font-weight: bold;
+  color: $gray !important;
+  margin-bottom: 30px !important;
 }
 
 .song-item {
