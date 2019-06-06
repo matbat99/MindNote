@@ -33,7 +33,7 @@ class Practice < ApplicationRecord
     today = DateTime.now
     last_session = self.sessions.order(:created_at).last.created_at
     last_session += self.interval.days
-    importance = (today.day - last_session.day).abs
+    importance = (today - last_session.to_date).to_i
     self.update(importance: importance)
   end
 
