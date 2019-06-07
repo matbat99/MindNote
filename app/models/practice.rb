@@ -43,6 +43,16 @@ class Practice < ApplicationRecord
     last_session.past?
   end
 
+  def back_one_day
+    last_session = self.sessions.order(:created_at).last
+    last_session.created_at -= 1.days
+    last_session.save
+  end
+
+  def forward_one_day
+  end
+
+
   def next_interval(grade)
     grade = MAX_GRADE if grade > MAX_GRADE
 
