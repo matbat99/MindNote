@@ -60,6 +60,12 @@
   }
 }
 
+
+.landing-logo-title {
+  width: 100%;
+
+}
+
 .logo-title {
   margin: 50px 11px 50px 0;
   width: 80%;
@@ -68,13 +74,22 @@
 
 .music-sheet {
   height: 100vh;
+  background-position: center;
   background-size: cover;
-  background-image: linear-gradient(45deg, rgba(232, 115, 88, .5), rgba(232, 115, 88, .5)), url(asset_path("music-sheet"));
-
+  background-image: url(asset_path("music-sheet-pro"));
+  h3 {
+    max-width: 300px;
+    margin: auto;
+    color: #172d58;
+    opacity: .6;
+    padding: 21px 0;
+  }
   h1 {
-    color: white;
-    font-size: 30px;
-    margin-bottom: 100px;
+    margin: auto;
+    margin-top: 102px;
+    color: #172d58;
+    font-size: 43px;
+    max-width: 257px;
   }
 
   a {
