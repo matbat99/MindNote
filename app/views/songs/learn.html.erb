@@ -4,6 +4,10 @@
 <div class="container">
     <div class="song-list">
       <h1 class="page-title">Pick a song to learn</h1>
+      <%= form_tag learn_path, method: :get do %>
+      <%= text_field_tag 'term', params[:term], placeholder: "Enter a song title" %>
+      <%= submit_tag 'Search' %>
+      <% end -%>
       <% @unlearned.each do |practice| %>
         <div class="song-item">
           <img src="<%= practice.song.album_url %>" alt="<%= practice.song.title %>">
