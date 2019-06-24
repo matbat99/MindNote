@@ -7,7 +7,7 @@ class SongsController < ApplicationController
     if params[:term]
       search_result = Song.search_by_title(params[:term])
       bill = search_result.to_a
-      @unlearned = bill.map { |song| Practice.where(song_id: song) }
+      @unlearned = bill.map { |song| Practice.where(song_id: song).first }
 
     else
       @unlearned = current_user.practices.where(active: false)
