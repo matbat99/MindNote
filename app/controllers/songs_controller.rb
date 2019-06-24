@@ -5,13 +5,16 @@ class SongsController < ApplicationController
 
   def learn
     if params[:term]
-      @unlearned = Song.search_by_title(params[:term])
+      search_result = Song.search_by_title(params[:term])
+      bill = search_result.to_a
+      @unlearned = bill.map { |song| Practice.where(song_id: song) }
+
     else
       @unlearned = current_user.practices.where(active: false)
     end
   end
 
-  def create
+  def creater
     if params[:radios].nil?
       redirect_to root_path
     else
